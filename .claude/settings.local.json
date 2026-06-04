@@ -6,7 +6,11 @@
       "Bash(mkdir -p \"C:\\\\Users\\\\Arquitecto 1\\\\Desktop\\\\mi-portfolio\\\\app\\\\work\\\\[slug]\")",
       "PowerShell(mkdir \"C:\\\\Users\\\\Arquitecto 1\\\\Desktop\\\\mi-portfolio\\\\components\\\\edvance\" -Force)",
       "PowerShell(mkdir \"C:\\\\Users\\\\Arquitecto 1\\\\Desktop\\\\mi-portfolio\\\\hooks\" -Force)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
