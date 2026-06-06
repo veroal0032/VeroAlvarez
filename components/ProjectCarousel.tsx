@@ -69,7 +69,7 @@ const PROJECTS = [
     link: '/work/breeeeeath',
     internal: true,
     image: 'https://raw.githubusercontent.com/veroal0032/Portfolio/main/Breeeeeath.png',
-    imagePosition: 'center center',
+    imagePosition: 'center top',
   },
   {
     id: 7,
@@ -502,7 +502,7 @@ export default function ProjectCarousel() {
         className="px-6 md:px-12 lg:px-20 max-w-6xl mx-auto mb-10"
       >
         <h2
-          className="text-center md:text-left mb-2 md:mb-0"
+          className="text-center md:text-right mb-2 md:mb-0"
           style={{
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 800,
@@ -510,7 +510,7 @@ export default function ProjectCarousel() {
             color: '#333333',
           }}
         >
-          Projects
+          Proyectos
         </h2>
         <p
           className="md:hidden text-center mt-2"
