@@ -133,14 +133,16 @@ export default function Hero() {
           </p>
 
           {/* Open to work — top 76, centrado, con float */}
-          <motion.div
-            {...floatY(3.5, 0.5)}
-            style={{ position: 'absolute', top: '76px', left: '50%', transform: 'translateX(-50%)', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}
-          >
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
-            Open to work
-            <span>✦</span>
-          </motion.div>
+          <div style={{ position: 'absolute', top: '76px', left: '50%', transform: 'translateX(-50%)' }}>
+            <motion.div
+              {...floatY(3.5, 0.5)}
+              style={{ background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}
+            >
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
+              Open to work
+              <span>✦</span>
+            </motion.div>
+          </div>
 
           {/* Imagen con AI GENERATED — top 124, centrada */}
           <div style={{ position: 'absolute', top: '124px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: '150px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0px 6px 20px rgba(0,0,0,0.25)' }}>
@@ -159,12 +161,14 @@ export default function Hero() {
           </div>
 
           {/* Hora — top 290, centrada, con float */}
-          <motion.p
-            {...floatY(4, 1.5)}
-            style={{ position: 'absolute', top: '290px', left: '50%', transform: 'translateX(-50%)', color: '#999', fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', letterSpacing: '0.02em', margin: 0, whiteSpace: 'nowrap' }}
-          >
-            {timeStr}
-          </motion.p>
+          <div style={{ position: 'absolute', top: '290px', left: '50%', transform: 'translateX(-50%)' }}>
+            <motion.p
+              {...floatY(4, 1.5)}
+              style={{ color: '#999', fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', letterSpacing: '0.02em', margin: 0, whiteSpace: 'nowrap' }}
+            >
+              {timeStr}
+            </motion.p>
+          </div>
 
         </div>
       </section>
