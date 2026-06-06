@@ -103,14 +103,14 @@ export default function BitacoraPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div style={{ borderRadius: "16px 16px 0 0", overflow: "hidden", alignSelf: "end" }}>
+          <div style={{ alignSelf: "end" }}>
             <Image
               src="/images/bitacora/hero.png"
               alt="Bitácora Psicológica"
               width={1909}
               height={903}
               priority
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "16px 16px 0 0" }}
             />
           </div>
         </div>
