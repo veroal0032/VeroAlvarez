@@ -68,7 +68,7 @@ const PROJECTS = [
     tools: 'HTML · CSS · JS',
     link: '/work/breeeeeath',
     internal: true,
-    image: 'https://raw.githubusercontent.com/veroal0032/Portfolio/main/BREEEEEATH.png',
+    image: 'https://raw.githubusercontent.com/veroal0032/Portfolio/main/Breeeeeath.png',
     imagePosition: 'center center',
   },
   {

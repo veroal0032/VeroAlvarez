@@ -169,6 +169,7 @@ export default function BreeeeeathPage() {
         .nav-link-breeeeeath:hover .nav-title-breeeeeath { color: #7EB8F7; transition: color 0.2s ease; }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid > div:first-child { padding-bottom: 0 !important; }
           .breeeeeath-img-wrap { height: auto !important; }
           .breeeeeath-img-wrap img { max-height: 280px !important; }
         }
