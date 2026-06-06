@@ -97,8 +97,8 @@ export default function BreeeeeathPage() {
             <Image
               src="/images/breeeeeath/hero.png"
               alt="Breeeeeath app"
-              width={560}
-              height={480}
+              width={380}
+              height={580}
               priority
               style={{ maxHeight: "480px", width: "auto", display: "block", objectFit: "contain", objectPosition: "center bottom" }}
             />
