@@ -42,6 +42,7 @@ function StatCell({ num, label, active }: { num: number; label: string; active: 
 
   return (
     <div
+      className="stat-cell"
       style={{
         background: '#FAFAF7',
         padding: '28px 32px',
@@ -51,6 +52,7 @@ function StatCell({ num, label, active }: { num: number; label: string; active: 
       }}
     >
       <span
+        className="stat-num"
         style={{
           fontFamily: 'var(--font-darker-grotesque)',
           fontWeight: 900,
@@ -81,37 +83,54 @@ function StatCell({ num, label, active }: { num: number; label: string; active: 
 
 export default function StatGrid({ active }: { active: boolean }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
-      {/* Text left */}
-      <p
-        style={{
-          fontFamily: 'var(--font-inter)',
-          fontWeight: 400,
-          fontSize: '15px',
-          color: '#666666',
-          lineHeight: 1.8,
-          textAlign: 'left',
-        }}
-      >
-        4 productos EdTech distintos, cada equipo diseñando por su cuenta. La misma
-        UI con 4 versiones diferentes, retrabajo constante, imposible de escalar.
-      </p>
+    <>
+      <div className="stat-grid-outer" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
+        {/* Text left */}
+        <p
+          style={{
+            fontFamily: 'var(--font-inter)',
+            fontWeight: 400,
+            fontSize: '15px',
+            color: '#666666',
+            lineHeight: 1.8,
+            textAlign: 'left',
+          }}
+        >
+          4 productos EdTech distintos, cada equipo diseñando por su cuenta. La misma
+          UI con 4 versiones diferentes, retrabajo constante, imposible de escalar.
+        </p>
 
-      {/* Stats grid right */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '1px',
-          background: 'rgba(0,0,0,0.07)',
-          borderRadius: '16px',
-          overflow: 'hidden',
-        }}
-      >
-        {STATS.map((s) => (
-          <StatCell key={s.num} num={s.num} label={s.label} active={active} />
-        ))}
+        {/* Stats grid right */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1px',
+            background: 'rgba(0,0,0,0.07)',
+            borderRadius: '16px',
+            overflow: 'hidden',
+          }}
+        >
+          {STATS.map((s) => (
+            <StatCell key={s.num} num={s.num} label={s.label} active={active} />
+          ))}
+        </div>
       </div>
-    </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .stat-grid-outer {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+          .stat-grid-outer .stat-num {
+            font-size: 48px !important;
+          }
+          .stat-grid-outer .stat-cell {
+            padding: 18px 20px !important;
+          }
+        }
+      `}</style>
+    </>
   )
 }
