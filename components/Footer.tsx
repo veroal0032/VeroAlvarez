@@ -4,32 +4,13 @@ import { motion } from 'framer-motion'
 
 const SOCIAL_LINKS = [
   {
-    label: 'Email',
-    href: 'mailto:veronicacalvarezl2008@gmail.com',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-      </svg>
-    ),
-  },
-  {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ver%C3%B3nica-alvarez-ux',
+    href: 'https://www.linkedin.com/in/veronica-alvarez-lovera',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
         <rect x="2" y="9" width="4" height="12"/>
         <circle cx="4" cy="4" r="2"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'Behance',
-    href: 'https://www.behance.net/veronicaalvarez',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.936 1.542 1.866 1.542.888 0 1.44-.434 1.618-1.013h2.272zm-7.737-3.43c.073-.91-.556-1.63-1.523-1.63-.98 0-1.544.62-1.667 1.63h3.19zM10.073 8c1.073 0 1.808.4 2.368 1.041.56.64.785 1.39.785 2.217 0 .974-.283 1.71-.848 2.221C12.898 13.92 13.5 14.7 13.5 16c0 1.838-1.431 3-3.5 3H1V8h8.073zM5 10v2h3.307c.636 0 1.045-.332 1.045-.997 0-.63-.392-.003-1.045-.003H5zm0 4v2.5h3.5c.69 0 1.125-.39 1.125-1.125 0-.68-.41-1.375-1.125-1.375H5z"/>
       </svg>
     ),
   },
@@ -43,12 +24,21 @@ const SOCIAL_LINKS = [
     ),
   },
   {
-    label: 'Dribbble',
-    href: 'https://dribbble.com/veroal0032',
+    label: 'Email',
+    href: 'mailto:veroal0032@gmail.com',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Behance',
+    href: 'https://www.behance.net/VeronicaAlvarezL',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" fill="none" stroke="currentColor" strokeWidth="1.8"/>
+        <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.936 1.542 1.866 1.542.888 0 1.44-.434 1.618-1.013h2.272zm-7.737-3.43c.073-.91-.556-1.63-1.523-1.63-.98 0-1.544.62-1.667 1.63h3.19zM10.073 8c1.073 0 1.808.4 2.368 1.041.56.64.785 1.39.785 2.217 0 .974-.283 1.71-.848 2.221C12.898 13.92 13.5 14.7 13.5 16c0 1.838-1.431 3-3.5 3H1V8h8.073zM5 10v2h3.307c.636 0 1.045-.332 1.045-.997 0-.63-.392-.003-1.045-.003H5zm0 4v2.5h3.5c.69 0 1.125-.39 1.125-1.125 0-.68-.41-1.375-1.125-1.375H5z"/>
       </svg>
     ),
   },

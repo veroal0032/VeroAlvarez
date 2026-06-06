@@ -56,26 +56,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* TAG BUENOS AIRES */}
-            <motion.div
-              {...floatY(3)}
-              style={{ position: 'absolute', top: '204px', left: '48px', background: '#F7D974', color: '#3d3200', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
-            >
-              📍 Buenos Aires
-            </motion.div>
-
-            {/* TAG OPEN TO WORK */}
-            <motion.div
-              {...floatY(3.5, 0.5)}
-              style={{ position: 'absolute', top: '225px', left: '315px', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
-            >
-              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
-                Open to work
-                <span>✦</span>
-              </span>
-            </motion.div>
-
             {/* TAG HOLA! */}
             <motion.div
               {...floatY(2.8, 1)}
@@ -84,22 +64,42 @@ export default function Hero() {
               hola!
             </motion.div>
 
-            {/* IMAGEN CENTRAL */}
-            <div style={{ position: 'absolute', top: '21px', left: '50%', transform: 'translateX(-50%)', width: '280px', height: '295px', borderRadius: '20px', overflow: 'hidden', zIndex: 1, boxShadow: '0px 6px 20px rgba(0,0,0,0.25)' }}>
-              <Image
-                src="/images/hero-bw.png"
-                alt="Verónica Alvarez"
-                fill
-                priority
-                quality={100}
-                sizes="280px"
-                style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%)' }}
-              />
-              <div style={{ position: 'absolute', bottom: '18px', left: '43px', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(4px)', color: '#333', fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '10px', letterSpacing: '0.06em', textTransform: 'uppercase', padding: '6px 14px', borderRadius: '999px', zIndex: 3, whiteSpace: 'nowrap' }}>
-                ✦ AI GENERATED, OBVIOUSLY
-              </div>
-            </div>
+          </div>
 
+          {/* TAG BUENOS AIRES — fuera del 1440px, top = 261+204 */}
+          <motion.div
+            {...floatY(3)}
+            style={{ position: 'absolute', top: '465px', left: '48px', background: '#F7D974', color: '#3d3200', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
+          >
+            📍 Buenos Aires
+          </motion.div>
+
+          {/* TAG OPEN TO WORK — fuera del 1440px, top = 261+225, debajo del nombre */}
+          <motion.div
+            {...floatY(3.5, 0.5)}
+            style={{ position: 'absolute', top: '486px', left: '315px', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
+              Open to work
+              <span>✦</span>
+            </span>
+          </motion.div>
+
+          {/* IMAGEN CENTRAL — fuera del contenedor 1440px para centrar sobre el viewport real */}
+          <div style={{ position: 'absolute', top: '282px', left: '50%', transform: 'translateX(-50%)', width: '280px', height: '295px', borderRadius: '20px', overflow: 'hidden', zIndex: 1, boxShadow: '0px 6px 20px rgba(0,0,0,0.25)' }}>
+            <Image
+              src="/images/hero-bw.png"
+              alt="Verónica Alvarez"
+              fill
+              priority
+              quality={100}
+              sizes="280px"
+              style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%)' }}
+            />
+            <div style={{ position: 'absolute', bottom: '18px', left: '43px', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(4px)', color: '#333', fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '10px', letterSpacing: '0.06em', textTransform: 'uppercase', padding: '6px 14px', borderRadius: '999px', zIndex: 3, whiteSpace: 'nowrap' }}>
+              ✦ AI GENERATED, OBVIOUSLY
+            </div>
           </div>
 
           {/* HORA Y DÍA */}
