@@ -8,7 +8,7 @@ export default function BitacoraPage() {
       <BackButton />
 
       {/* HERO */}
-      <section style={{ background: "#decbe5", padding: "clamp(80px, 10vw, 120px) clamp(24px, 8vw, 80px) 0" }}>
+      <section style={{ background: "#decbe5", padding: "clamp(80px, 10vw, 120px) clamp(24px, 8vw, 80px) clamp(32px, 5vw, 48px)" }}>
         <div
           style={{
             maxWidth: "1152px",
@@ -103,14 +103,20 @@ export default function BitacoraPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div className="bitacora-img-wrap" style={{ alignSelf: "end", borderRadius: "16px 16px 0 0", overflow: "hidden" }}>
+          <div className="bitacora-img-wrap" style={{
+            position: "relative",
+            width: "100%",
+            height: "340px",
+            borderRadius: "16px",
+            overflow: "hidden",
+          }}>
             <Image
               src="/images/bitacora/hero.png"
               alt="Bitácora Psicológica"
-              width={1909}
-              height={903}
+              fill
               priority
-              style={{ width: "100%", height: "auto", display: "block" }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: "cover", objectPosition: "top center" }}
             />
           </div>
         </div>
@@ -191,8 +197,7 @@ export default function BitacoraPage() {
         .nav-link-bitacora:hover .nav-title-bitacora { color: #8B7355; transition: color 0.2s ease; }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
-          .bitacora-img-wrap { max-height: 260px; }
-          .bitacora-img-wrap img { object-fit: cover; object-position: top center; height: 260px !important; }
+          .bitacora-img-wrap { height: 220px !important; border-radius: 12px !important; }
         }
       `}</style>
     </main>
