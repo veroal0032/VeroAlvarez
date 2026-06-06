@@ -3,132 +3,145 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+const CV_URL = 'https://drive.google.com/file/d/1F_UxUDcjXuYtPo0RfVUnPdVbSM90GUCh/view?usp=drive_link'
+
 const POLAROIDS = [
-  {
-    src: '/images/polaroid-luna.png',
-    alt: 'Luna, my dog',
-    rotate: '-5deg',
-  },
-  {
-    src: '/images/polaroid-ba.png',
-    alt: 'Buenos Aires',
-    rotate: '2deg',
-  },
-  {
-    src: '/images/polaroid-vero.png',
-    alt: 'Verónica at a restaurant',
-    rotate: '7deg',
-  },
+  { src: '/images/polaroid-luna.png', alt: 'Luna, my dog' },
+  { src: '/images/polaroid-ba.png',   alt: 'Buenos Aires' },
+  { src: '/images/polaroid-vero.png', alt: 'Verónica at a restaurant' },
 ]
+
+const DESKTOP_PHOTOS = [
+  { ...POLAROIDS[0], rotate: '-5deg', top: 0,   left: 10,  zIndex: 2 },
+  { ...POLAROIDS[1], rotate: '4deg',  top: 40,  left: 185, zIndex: 1 },
+  { ...POLAROIDS[2], rotate: '-2deg', top: 200, left: 80,  zIndex: 3 },
+]
+
+const MOBILE_PHOTOS = [
+  { ...POLAROIDS[0], rotate: -6, x: -70, y: -20, zIndex: 2 },
+  { ...POLAROIDS[1], rotate: 5,  x: 50,  y: -30, zIndex: 1 },
+  { ...POLAROIDS[2], rotate: -2, x: -10, y: 70,  zIndex: 3 },
+]
+
+const textStyle = {
+  fontFamily: 'var(--font-inter)',
+  fontWeight: 300,
+  fontSize: '13px',
+  color: '#666666',
+  lineHeight: 1.8,
+}
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-6 md:px-12 lg:px-20">
+    <section id="about" style={{ background: '#FAFAF7' }}>
+
+      {/* ── DESKTOP ── */}
       <motion.div
+        className="about-desktop"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
+        style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 72px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '80px', boxSizing: 'border-box' }}
       >
-        {/* LEFT — text */}
-        <div className="flex flex-col gap-6">
-          <h2
-            className="text-center md:text-left"
-            style={{
-              fontFamily: 'var(--font-darker-grotesque)',
-              fontWeight: 800,
-              fontSize: 'clamp(36px, 4vw, 42px)',
-              color: '#333333',
-              lineHeight: 1,
-            }}
-          >
+        {/* texto */}
+        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: 'clamp(36px, 4vw, 42px)', color: '#333', lineHeight: 1, margin: 0 }}>
             About me
           </h2>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-inter)',
-              fontWeight: 300,
-              fontSize: '13px',
-              color: '#666666',
-              lineHeight: 1.8,
-              maxWidth: '480px',
-            }}
-          >
+          <p style={{ ...textStyle, maxWidth: '480px', margin: 0 }}>
             I&apos;m a Venezuelan-born designer currently living in Argentina, with a dog,
             love for art and creative expression. Architecture taught me how to observe,
             think in ideas, and design with purpose — always thinking about people and
-            the access they inhabit.
+            the spaces they inhabit.
             <br /><br />
             Today, I&apos;m combining my journey into UX/UI, exploring how these same
             principles translate into digital experiences — I see design as a process of
             building, modeling, and giving form — shaping ideas until they feel simple,
             human, and meaningful.
           </p>
-
           <a
-            href="#"
-            style={{
-              fontFamily: 'var(--font-inter)',
-              fontWeight: 500,
-              fontSize: '13px',
-              color: '#333333',
-              textDecoration: 'underline',
-              textUnderlineOffset: '3px',
-              width: 'fit-content',
-            }}
+            href={CV_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '13px 26px', backgroundColor: '#A8E6CF', color: '#111', fontFamily: 'var(--font-darker-grotesque)', fontSize: '13px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '3px', width: 'fit-content' }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'translateY(0)' }}
           >
-            → VIEW CV
+            ➡ &nbsp; View CV
           </a>
         </div>
 
-        {/* RIGHT — polaroid row */}
-        <div className="flex justify-center md:justify-end">
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-            {POLAROIDS.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.12,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{
-                  position: 'relative',
-                  background: '#ffffff',
-                  padding: '7px 7px 22px 7px',
-                  boxShadow: '0 4px 18px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06)',
-                  transform: `rotate(${p.rotate})`,
-                  transformOrigin: 'bottom center',
-                  width: '120px',
-                  flexShrink: 0,
-                }}
-              >
-                <div
-                  style={{
-                    width: '106px',
-                    height: '106px',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    background: '#e0e0e0',
-                  }}
-                >
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* fotos superpuestas */}
+        <div style={{ position: 'relative', width: '360px', height: '420px', flexShrink: 0 }}>
+          {DESKTOP_PHOTOS.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              style={{ position: 'absolute', top: p.top, left: p.left, width: '155px', background: '#fff', padding: '8px 8px 28px', boxShadow: '0 4px 18px rgba(0,0,0,0.10)', transform: `rotate(${p.rotate})`, zIndex: p.zIndex }}
+            >
+              <div style={{ width: '100%', aspectRatio: '1 / 1', position: 'relative', overflow: 'hidden' }}>
+                <Image src={p.src} alt={p.alt} fill sizes="155px" style={{ objectFit: 'cover' }} />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
+
+      {/* ── MOBILE ── */}
+      <div
+        className="about-mobile"
+        style={{ padding: '40px 20px 60px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}
+      >
+        <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: '32px', color: '#333', lineHeight: 1, margin: '0 0 20px', textAlign: 'center' }}>
+          About me
+        </h2>
+        <p style={{ ...textStyle, margin: '0 0 16px' }}>
+          I&apos;m a Venezuelan-born designer currently living in Argentina, with a dog,
+          love for art and creative expression. Architecture taught me how to observe,
+          think in ideas, and design with purpose — always thinking about people and
+          the spaces they inhabit.
+        </p>
+        <p style={{ ...textStyle, margin: '0 0 32px' }}>
+          Today, I&apos;m combining my journey into UX/UI, exploring how these same
+          principles translate into digital experiences — I see design as a process of
+          building, modeling, and giving form — shaping ideas until they feel simple,
+          human, and meaningful.
+        </p>
+        <a
+          href={CV_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'inline-flex', alignSelf: 'center', alignItems: 'center', gap: '8px', padding: '12px 22px', backgroundColor: '#A8E6CF', color: '#111', fontFamily: 'var(--font-darker-grotesque)', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '3px', marginBottom: '64px' }}
+        >
+          ➡ &nbsp; View CV
+        </a>
+
+        {/* fotos superpuestas centradas */}
+        <div style={{ position: 'relative', width: '100%', height: '260px' }}>
+          {MOBILE_PHOTOS.map((p, i) => (
+            <div
+              key={i}
+              style={{ position: 'absolute', top: '50%', left: '50%', width: '120px', backgroundColor: '#fff', padding: '6px 6px 22px', boxShadow: '0 4px 18px rgba(0,0,0,0.10)', transform: `translate(calc(-50% + ${p.x}px), calc(-50% + ${p.y}px)) rotate(${p.rotate}deg)`, zIndex: p.zIndex }}
+            >
+              <div style={{ width: '100%', aspectRatio: '1 / 1', position: 'relative', overflow: 'hidden' }}>
+                <Image src={p.src} alt={p.alt} fill sizes="120px" style={{ objectFit: 'cover' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        .about-mobile  { display: none; }
+        @media (max-width: 767px) {
+          .about-desktop { display: none !important; }
+          .about-mobile  { display: flex !important; }
+        }
+      `}</style>
     </section>
   )
 }
