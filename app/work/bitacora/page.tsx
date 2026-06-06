@@ -103,14 +103,14 @@ export default function BitacoraPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div style={{ alignSelf: "end" }}>
+          <div className="bitacora-img-wrap" style={{ alignSelf: "end", borderRadius: "16px 16px 0 0", overflow: "hidden" }}>
             <Image
               src="/images/bitacora/hero.png"
               alt="Bitácora Psicológica"
               width={1909}
               height={903}
               priority
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: "16px 16px 0 0" }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
         </div>
@@ -191,6 +191,8 @@ export default function BitacoraPage() {
         .nav-link-bitacora:hover .nav-title-bitacora { color: #8B7355; transition: color 0.2s ease; }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
+          .bitacora-img-wrap { max-height: 260px; }
+          .bitacora-img-wrap img { object-fit: cover; object-position: top center; height: 260px !important; }
         }
       `}</style>
     </main>

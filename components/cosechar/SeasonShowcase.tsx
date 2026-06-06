@@ -84,21 +84,19 @@ export default function SeasonShowcase() {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
       <style>{`
         @media (max-width: 640px) {
-          .season-grid { grid-template-columns: 1fr !important; padding: 24px !important; }
-          .season-pills-row { flex-wrap: wrap !important; justify-content: center !important; }
+          .season-grid {
+            grid-template-columns: 1fr !important;
+            padding: 20px 16px !important;
+            gap: 20px !important;
+          }
+          .season-pills-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            border-radius: 16px !important;
+            width: 100% !important;
+          }
         }
       `}</style>
-
-      {/* Handwriting note */}
-      <div style={{ display: 'flex', alignItems: 'center', transform: 'rotate(-2deg)' }}>
-        <span style={{ fontFamily: 'var(--font-caveat), cursive', fontSize: '18px', color: '#999' }}>
-          ¡cambia de estacion!
-        </span>
-        <svg width="36" height="32" viewBox="0 0 36 32" style={{ display: 'inline-block', marginTop: '8px' }}>
-          <path d="M 2 4 Q 8 2 14 16 Q 18 26 28 28 L 22 24 M 28 28 L 24 22"
-            stroke="#999" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
 
       {/* Season selector */}
       <div className="season-pills-row" style={{ display: 'flex', gap: '6px', padding: '5px', borderRadius: '999px', background: '#f0ede6' }}>

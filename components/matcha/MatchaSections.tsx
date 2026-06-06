@@ -240,11 +240,11 @@ const procesoContent = (
         { value: 'Supabase',    label: 'base de datos' },
         { value: 'PostHog',     label: 'estadísticas' },
       ].map((s, i) => (
-        <div key={s.value} style={{ padding: '20px 16px', textAlign: 'center', borderRight: i < 2 ? '1px solid rgba(0,0,0,0.08)' : 'none' }}>
-          <p style={{ fontFamily: DG, fontWeight: 700, fontSize: '24px', color: '#155020', marginBottom: '4px', lineHeight: 1 }}>
+        <div key={s.value} style={{ padding: '16px 8px', textAlign: 'center', borderRight: i < 2 ? '1px solid rgba(0,0,0,0.08)' : 'none' }}>
+          <p style={{ fontFamily: DG, fontWeight: 700, fontSize: 'clamp(15px, 2.5vw, 24px)', color: '#155020', marginBottom: '4px', lineHeight: 1.2 }}>
             {s.value}
           </p>
-          <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '12px', color: '#888', margin: 0 }}>
+          <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '11px', color: '#888', margin: 0 }}>
             {s.label}
           </p>
         </div>

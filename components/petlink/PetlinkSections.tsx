@@ -96,11 +96,11 @@ const problemaContent = (
         { value: 'Entrevistas', label: 'Usuarios testados' },
       ].map((s, i) => (
         <div key={s.value} style={{
-          padding: '20px 16px',
+          padding: '16px 8px',
           textAlign: 'center',
           borderRight: i < 2 ? '1px solid rgba(0,0,0,0.08)' : 'none',
         }}>
-          <p style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: '18px', color: ACCENT, marginBottom: '4px', lineHeight: 1 }}>
+          <p style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: 'clamp(14px, 2.5vw, 18px)', color: ACCENT, marginBottom: '4px', lineHeight: 1.2 }}>
             {s.value}
           </p>
           <p style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', color: '#888888', margin: 0 }}>
