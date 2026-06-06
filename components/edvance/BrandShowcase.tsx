@@ -28,6 +28,7 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
       animate={{ opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.15 }}
       whileHover={{ scale: 1.03 }}
+      className="brand-course-card"
       style={{
         width: '200px',
         borderRadius: '20px',
@@ -103,13 +104,13 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
 /* ── PrimaryButton ── */
 function PrimaryButton({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]; visible: boolean }) {
   return (
-    <motion.div animate={{ opacity: visible ? 1 : 0 }} transition={{ duration: 0.15 }}>
+    <motion.div animate={{ opacity: visible ? 1 : 0 }} transition={{ duration: 0.15 }} className="brand-primary-btn" style={{ width: '200px' }}>
       <motion.button
         whileHover={{ y: -2, boxShadow: `0 8px 20px ${tokens.primary}40` }}
         whileTap={{ y: 0, scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 400, damping: 20 }}
         style={{
-          width: '200px',
+          width: '100%',
           height: '48px',
           borderRadius: '12px',
           background: tokens.primary,
@@ -139,6 +140,7 @@ function LogroBadge({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
       transition={{ duration: 0.15, delay: 0.04 }}
       onHoverStart={() => setStarHover(true)}
       onHoverEnd={() => setStarHover(false)}
+      className="brand-logro-badge"
       style={{
         borderRadius: '14px',
         background: tokens.primary,
@@ -150,6 +152,7 @@ function LogroBadge({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
         height: '56px',
         flexShrink: 0,
         cursor: 'default',
+        boxSizing: 'border-box',
       }}
     >
       <motion.div
@@ -192,8 +195,29 @@ export default function BrandShowcase() {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
       <style>{`
         @media (max-width: 640px) {
-          .brand-pills-row { flex-wrap: wrap !important; justify-content: center !important; }
-          .brand-components-area { flex-direction: column !important; align-items: center !important; }
+          .brand-pills-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            border-radius: 16px !important;
+            width: 100% !important;
+          }
+          .brand-components-area {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            padding: 20px 16px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+          }
+          .brand-course-card {
+            width: 100% !important;
+          }
+          .brand-right-col {
+            align-items: stretch !important;
+            width: 100% !important;
+          }
+          .brand-primary-btn, .brand-logro-badge {
+            width: 100% !important;
+          }
         }
       `}</style>
       {/* Title */}
@@ -266,7 +290,7 @@ export default function BrandShowcase() {
         <CourseCard tokens={tokens} visible={visible} />
 
         {/* Right column: PrimaryButton + LogroBadge */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+        <div className="brand-right-col" style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
           <PrimaryButton tokens={tokens} visible={visible} />
           <LogroBadge tokens={tokens} visible={visible} />
         </div>
