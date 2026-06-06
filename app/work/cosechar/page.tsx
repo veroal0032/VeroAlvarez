@@ -157,7 +157,7 @@ export default function CosecharPage() {
         </Link>
 
         <Link
-          href="/work/breeeeeath"
+          href="/work/bitacora"
           style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '3px', alignItems: 'flex-end' }}
           className="nav-link"
         >
@@ -165,7 +165,7 @@ export default function CosecharPage() {
             Next →
           </span>
           <span className="nav-title" style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: '22px', color: '#333333', lineHeight: 1.1, textAlign: 'right' }}>
-            Breeeeeath
+            Bitácora
           </span>
         </Link>
       </nav>
