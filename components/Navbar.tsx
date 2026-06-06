@@ -4,11 +4,16 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ContactSheet from './ContactSheet'
 
-const NAV_LINKS = ['PROJECTS', 'ABOUT', 'RESUME', 'CONTACT'] as const
+const NAV_LINKS = [
+  { label: 'PROYECTOS', href: '#projects' },
+  { label: 'SOBRE MÍ',  href: '#about' },
+  { label: 'RESUME',    href: 'https://drive.google.com/file/d/1F_UxUDcjXuYtPo0RfVUnPdVbSM90GUCh/view?usp=drive_link' },
+  { label: 'CONTACTO',  href: '#contact' },
+] as const
 
 function NavButton({ label, href, onClick }: { label: string; href: string; onClick?: () => void }) {
   const [hovered, setHovered] = useState(false)
-  const isContact = label === 'CONTACT'
+  const isContact = label === 'CONTACTO'
 
   return (
     <a
@@ -70,9 +75,9 @@ export default function Navbar() {
       >
         {NAV_LINKS.map((link) => (
           <NavButton
-            key={link}
-            label={link}
-            href={`#${link.toLowerCase()}`}
+            key={link.label}
+            label={link.label}
+            href={link.href}
           />
         ))}
       </div>
@@ -110,7 +115,7 @@ export default function Navbar() {
             cursor: 'pointer',
           }}
         >
-          CONTACT
+          CONTACTO
         </button>
       </div>
 
@@ -124,10 +129,16 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="md:hidden absolute top-full left-0 right-0 bg-[#FAFAF7] border-t border-[#e5e5e0] px-6 py-6 flex flex-col gap-5"
           >
-            {(['PROJECTS', 'ABOUT', 'RESUME'] as const).map((link) => (
+            {([
+              { label: 'PROYECTOS', href: '#projects' },
+              { label: 'SOBRE MÍ',  href: '#about' },
+              { label: 'RESUME',    href: 'https://drive.google.com/file/d/1F_UxUDcjXuYtPo0RfVUnPdVbSM90GUCh/view?usp=drive_link' },
+            ] as const).map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 onClick={() => setMenuOpen(false)}
                 style={{
                   fontFamily: 'var(--font-inter)',
@@ -139,7 +150,7 @@ export default function Navbar() {
                   textDecoration: 'none',
                 }}
               >
-                {link}
+                {link.label}
               </a>
             ))}
             <button

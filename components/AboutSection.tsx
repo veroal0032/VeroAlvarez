@@ -48,18 +48,18 @@ export default function AboutSection() {
         {/* texto */}
         <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: 'clamp(36px, 4vw, 42px)', color: '#333', lineHeight: 1, margin: 0 }}>
-            About me
+            Sobre mí
           </h2>
           <p style={{ ...textStyle, maxWidth: '480px', margin: 0 }}>
-            I&apos;m a Venezuelan-born designer currently living in Argentina, with a dog,
-            love for art and creative expression. Architecture taught me how to observe,
-            think in ideas, and design with purpose — always thinking about people and
-            the spaces they inhabit.
+            Soy una diseñadora nacida en Venezuela que actualmente vive en Argentina,
+            con un gran amor por el arte y la expresión creativa. La arquitectura me
+            enseñó a observar, pensar a través de las ideas y diseñar con propósito,
+            siempre considerando a las personas y los espacios que habitan.
             <br /><br />
-            Today, I&apos;m combining my journey into UX/UI, exploring how these same
-            principles translate into digital experiences — I see design as a process of
-            building, modeling, and giving form — shaping ideas until they feel simple,
-            human, and meaningful.
+            Hoy estoy integrando ese recorrido al mundo del UX/UI, explorando cómo esos
+            mismos principios se trasladan a las experiencias digitales. Veo el diseño
+            como un proceso de construir, modelar y dar forma: moldear ideas hasta que
+            se sientan simples, humanas y significativas.
           </p>
           <a
             href={CV_URL}
@@ -69,7 +69,7 @@ export default function AboutSection() {
             onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; e.currentTarget.style.transform = 'translateY(-2px)' }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'translateY(0)' }}
           >
-            ➡ &nbsp; View CV
+            ➡ &nbsp; Ver CV
           </a>
         </div>
 
@@ -99,19 +99,19 @@ export default function AboutSection() {
         style={{ padding: '16px 20px 60px', boxSizing: 'border-box' }}
       >
         <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: '32px', color: '#333', lineHeight: 1, margin: '0 0 20px', textAlign: 'center' }}>
-          About me
+          Sobre mí
         </h2>
         <p style={{ ...textStyle, margin: '0 0 16px' }}>
-          I&apos;m a Venezuelan-born designer currently living in Argentina, with a dog,
-          love for art and creative expression. Architecture taught me how to observe,
-          think in ideas, and design with purpose — always thinking about people and
-          the spaces they inhabit.
+          Soy una diseñadora nacida en Venezuela que actualmente vive en Argentina,
+          con un gran amor por el arte y la expresión creativa. La arquitectura me
+          enseñó a observar, pensar a través de las ideas y diseñar con propósito,
+          siempre considerando a las personas y los espacios que habitan.
         </p>
         <p style={{ ...textStyle, margin: '0 0 32px' }}>
-          Today, I&apos;m combining my journey into UX/UI, exploring how these same
-          principles translate into digital experiences — I see design as a process of
-          building, modeling, and giving form — shaping ideas until they feel simple,
-          human, and meaningful.
+          Hoy estoy integrando ese recorrido al mundo del UX/UI, explorando cómo esos
+          mismos principios se trasladan a las experiencias digitales. Veo el diseño
+          como un proceso de construir, modelar y dar forma: moldear ideas hasta que
+          se sientan simples, humanas y significativas.
         </p>
         <a
           href={CV_URL}
@@ -119,7 +119,7 @@ export default function AboutSection() {
           rel="noopener noreferrer"
           style={{ display: 'inline-flex', alignSelf: 'center', alignItems: 'center', gap: '8px', padding: '12px 22px', backgroundColor: '#A8E6CF', color: '#111', fontFamily: 'var(--font-darker-grotesque)', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '3px', marginBottom: '64px' }}
         >
-          ➡ &nbsp; View CV
+          ➡ &nbsp; Ver CV
         </a>
 
         {/* fotos superpuestas centradas */}
