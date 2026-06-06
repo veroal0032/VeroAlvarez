@@ -37,7 +37,7 @@ export default function AboutSection() {
 
       {/* ── DESKTOP ── */}
       <motion.div
-        className="about-desktop"
+        className="hidden md:flex"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -93,7 +93,7 @@ export default function AboutSection() {
 
       {/* ── MOBILE ── */}
       <div
-        className="about-mobile"
+        className="md:hidden"
         style={{ padding: '40px 20px 60px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}
       >
         <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: '32px', color: '#333', lineHeight: 1, margin: '0 0 20px', textAlign: 'center' }}>
@@ -135,13 +135,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <style>{`
-        .about-mobile  { display: none; }
-        @media (max-width: 767px) {
-          .about-desktop { display: none !important; }
-          .about-mobile  { display: flex !important; }
-        }
-      `}</style>
     </section>
   )
 }
