@@ -183,12 +183,15 @@ export default function BitacoraPage() {
       {/* FOOTER MINI */}
       <div style={{ textAlign: "center", padding: "28px 24px", borderTop: "1px solid rgba(0,0,0,0.06)" }}>
         <Link href="/" style={{ fontFamily: "var(--font-inter)", fontWeight: 400, fontSize: "12px", color: "#aaaaaa", textDecoration: "none" }}>
-          ← Back to portfolio
+          ← Volver al portfolio
         </Link>
       </div>
 
       <style>{`
         .nav-link-bitacora:hover .nav-title-bitacora { color: #8B7355; transition: color 0.2s ease; }
+        @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+        }
       `}</style>
     </main>
   );

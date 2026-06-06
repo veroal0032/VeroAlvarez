@@ -60,7 +60,7 @@ export default function MatchaChaPage() {
                 color: '#155020',
               }}
             >
-              UX/UI · Vibe Coding · 2025
+              UX/UI · Vibe Coding · 2026
             </span>
 
             <p
@@ -74,7 +74,7 @@ export default function MatchaChaPage() {
               }}
             >
               Kiosco de autoservicio para una cafetería especializada en matcha.
-              Diseño, desarrollo y branding en un solo proyecto.
+              Diseño y desarrollo en un solo proyecto.
             </p>
 
             {/* Metadata row */}
@@ -88,9 +88,9 @@ export default function MatchaChaPage() {
             >
               {[
                 { label: 'Rol',          value: 'UX/UI · Vibe Coder' },
-                { label: 'Herramientas', value: 'Figma · Supabase · Claude · PostHog' },
-                { label: 'Año',          value: '2025' },
-                { label: 'Tipo',         value: 'Proyecto curso "Creación de productos desde cero" — Coderhouse 2026' },
+                { label: 'Herramientas', value: 'Figma · Figma Make · Supabase · Claude · PostHog' },
+                { label: 'Año',          value: '2026' },
+                { label: 'Contexto',     value: 'Proyecto del curso "Creación de productos desde cero" — Coderhouse' },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{
@@ -231,7 +231,7 @@ export default function MatchaChaPage() {
           color: '#aaaaaa',
           textDecoration: 'none',
         }}>
-          ← Back to portfolio
+          ← Volver al portfolio
         </Link>
       </div>
 

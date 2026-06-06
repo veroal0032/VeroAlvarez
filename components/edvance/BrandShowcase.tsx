@@ -190,6 +190,12 @@ export default function BrandShowcase() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+      <style>{`
+        @media (max-width: 640px) {
+          .brand-pills-row { flex-wrap: wrap !important; justify-content: center !important; }
+          .brand-components-area { flex-direction: column !important; align-items: center !important; }
+        }
+      `}</style>
       {/* Title */}
       <div style={{ textAlign: 'center' }}>
         <p style={{
@@ -207,42 +213,8 @@ export default function BrandShowcase() {
         </p>
       </div>
 
-      {/* Handwriting note */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '2px',
-        marginBottom: '16px',
-        transform: 'rotate(-2deg)',
-      }}>
-        <span style={{
-          fontFamily: 'var(--font-caveat), cursive',
-          fontSize: '18px',
-          color: '#999',
-          display: 'inline-block',
-        }}>
-          ¡prueba los componentes!
-        </span>
-        <svg
-          width="36"
-          height="32"
-          viewBox="0 0 36 32"
-          style={{ display: 'inline-block', marginTop: '8px' }}
-        >
-          <path
-            d="M 2 4 Q 8 2 14 16 Q 18 26 28 28 L 22 24 M 28 28 L 24 22"
-            stroke="#999"
-            strokeWidth="1.5"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-
       {/* Brand selector pills */}
-      <div style={{
+      <div className="brand-pills-row" style={{
         display: 'flex',
         gap: '6px',
         padding: '5px',
@@ -280,6 +252,7 @@ export default function BrandShowcase() {
       <motion.div
         animate={{ backgroundColor: `${tokens.imageBg}4D` }}
         transition={{ duration: 0.3 }}
+        className="brand-components-area"
         style={{
           borderRadius: '24px',
           padding: '32px 40px',

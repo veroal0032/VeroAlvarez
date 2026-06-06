@@ -116,10 +116,10 @@ export default function EdvancePage() {
             {/* Metadata grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px 24px', marginTop: '4px' }}>
               {[
-                { label: 'Rol',          value: 'Design Systems · UX/UI' },
-                { label: 'Herramientas', value: 'Figma · Tokens Studio · WCAG 2.1' },
+                { label: 'Rol',          value: 'UX UI Designer / Líder de equipo' },
+                { label: 'Herramientas', value: 'Figma · Figma Make · Claude' },
                 { label: 'Año',          value: '2026' },
-                { label: 'Contexto',     value: 'No Country S03-26' },
+                { label: 'Contexto',     value: 'Simulación laboral — No Country' },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{
@@ -232,7 +232,7 @@ export default function EdvancePage() {
             textDecoration: 'none',
           }}
         >
-          ← Back to portfolio
+          ← Volver al portfolio
         </Link>
       </div>
 

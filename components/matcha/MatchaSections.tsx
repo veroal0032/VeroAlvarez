@@ -143,8 +143,8 @@ const startPointContent = (
   <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '15px', color: '#666', lineHeight: 1.7, maxWidth: '672px', margin: 0 }}>
     Este proyecto nació de una necesidad real: agilizar la toma de pedidos en una cafetería
     especializada en matcha. A diferencia de otros proyectos, acá también fui la arquitecta que
-    lideró la creación de la marca — el branding, la identidad visual y el look and feel ya los
-    tenía completamente claros antes de diseñar la primera pantalla. Eso cambió todo el proceso.
+    lideró la creación del local, por lo que el look and feel ya lo manejaba y sabía lo que la
+    marca quería buscar.
   </p>
 )
 

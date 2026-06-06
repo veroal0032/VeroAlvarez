@@ -82,6 +82,12 @@ export default function SeasonShowcase() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
+      <style>{`
+        @media (max-width: 640px) {
+          .season-grid { grid-template-columns: 1fr !important; padding: 24px !important; }
+          .season-pills-row { flex-wrap: wrap !important; justify-content: center !important; }
+        }
+      `}</style>
 
       {/* Handwriting note */}
       <div style={{ display: 'flex', alignItems: 'center', transform: 'rotate(-2deg)' }}>
@@ -95,7 +101,7 @@ export default function SeasonShowcase() {
       </div>
 
       {/* Season selector */}
-      <div style={{ display: 'flex', gap: '6px', padding: '5px', borderRadius: '999px', background: '#f0ede6' }}>
+      <div className="season-pills-row" style={{ display: 'flex', gap: '6px', padding: '5px', borderRadius: '999px', background: '#f0ede6' }}>
         {SEASON_ORDER.map((key) => {
           const s = SEASONS[key]
           return (

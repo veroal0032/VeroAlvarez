@@ -82,7 +82,7 @@ export default function PetlinkPage() {
                 { label: 'Rol',          value: 'UX/UI Designer' },
                 { label: 'Herramientas', value: 'Figma' },
                 { label: 'Año',          value: '2024' },
-                { label: 'Tipo',         value: 'Proyecto final Coderhouse' },
+                { label: 'Contexto',     value: 'Proyecto final Coderhouse' },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{
@@ -195,7 +195,7 @@ export default function PetlinkPage() {
             textDecoration: 'none',
           }}
         >
-          ← Back to portfolio
+          ← Volver al portfolio
         </Link>
       </div>
 

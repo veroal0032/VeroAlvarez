@@ -74,8 +74,8 @@ export default function CosecharPage() {
               {[
                 { label: 'Rol',          value: 'UX/UI · Vibe Coder' },
                 { label: 'Herramientas', value: 'React · Vercel · Claude' },
-                { label: 'Año',          value: '2025' },
-                { label: 'Tipo',         value: 'Proyecto personal' },
+                { label: 'Año',          value: '2026' },
+                { label: 'Contexto',     value: 'Proyecto personal' },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{
@@ -173,7 +173,7 @@ export default function CosecharPage() {
       {/* ── FOOTER MINI ── */}
       <div style={{ textAlign: 'center', padding: '28px 24px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
         <Link href="/" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', color: '#aaaaaa', textDecoration: 'none' }}>
-          ← Back to portfolio
+          ← Volver al portfolio
         </Link>
       </div>
 
