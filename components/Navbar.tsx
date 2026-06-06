@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ContactSheet from './ContactSheet'
 
 const NAV_LINKS = ['PROJECTS', 'ABOUT', 'RESUME', 'CONTACT'] as const
 
@@ -42,6 +43,7 @@ function NavButton({ label, href, onClick }: { label: string; href: string; onCl
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
 
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
@@ -91,9 +93,9 @@ export default function Navbar() {
           <span className={`block w-5 h-[1.5px] bg-[#333] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
         </button>
 
-        {/* CONTACT — derecha */}
-        <a
-          href="#contact"
+        {/* CONTACT — derecha → abre ContactSheet */}
+        <button
+          onClick={() => setContactOpen(true)}
           style={{
             fontFamily: 'var(--font-inter)',
             fontWeight: 500,
@@ -104,11 +106,12 @@ export default function Navbar() {
             color: '#FAFAF7',
             padding: '8px 16px',
             borderRadius: '999px',
-            textDecoration: 'none',
+            border: 'none',
+            cursor: 'pointer',
           }}
         >
           CONTACT
-        </a>
+        </button>
       </div>
 
       {/* ── MOBILE MENU DESPLEGABLE ── */}
@@ -139,9 +142,8 @@ export default function Navbar() {
                 {link}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => { setMenuOpen(false); setContactOpen(true) }}
               style={{
                 fontFamily: 'var(--font-inter)',
                 fontWeight: 500,
@@ -152,16 +154,18 @@ export default function Navbar() {
                 color: '#FAFAF7',
                 padding: '10px 20px',
                 borderRadius: '999px',
-                display: 'inline-block',
+                border: 'none',
+                cursor: 'pointer',
                 width: 'fit-content',
-                textDecoration: 'none',
               }}
             >
               CONTACT
-            </a>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ContactSheet isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </nav>
   )
 }
