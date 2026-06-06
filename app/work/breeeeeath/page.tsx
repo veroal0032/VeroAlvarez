@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
 
@@ -8,69 +9,99 @@ export default function BreeeeeathPage() {
     <main style={{ background: "#FAFAF7", minHeight: "100vh" }}>
       <BackButton />
       {/* HERO */}
-      <section
-        style={{ background: "#F0F4FF" }}
-        className="py-32"
-      >
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h1
-            style={{
-              fontFamily: "var(--font-display, 'DM Sans', sans-serif)",
-              fontWeight: 900,
-              fontSize: "96px",
-              lineHeight: 1,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            <span style={{ color: "#333" }}>Bree</span>
-            <span style={{ color: "#7EB8F7" }}>eeath</span>
-          </h1>
+      <section style={{ background: "#ECEAF5", padding: "clamp(80px, 10vw, 120px) clamp(24px, 8vw, 80px) 0" }}>
+        <div
+          style={{
+            maxWidth: "1152px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(32px, 6vw, 80px)",
+            alignItems: "end",
+          }}
+          className="hero-grid"
+        >
+          {/* Left */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px", paddingBottom: "clamp(48px, 8vw, 80px)" }}>
+            <div>
+              <h1
+                style={{
+                  fontFamily: "var(--font-darker-grotesque)",
+                  fontWeight: 900,
+                  fontSize: "clamp(56px, 8vw, 96px)",
+                  lineHeight: 0.92,
+                  letterSpacing: "-0.02em",
+                  color: "#13947A",
+                  margin: 0,
+                }}
+              >
+                Breeeeeath
+              </h1>
+            </div>
 
-          <p
-            style={{
-              fontFamily: "Inter, sans-serif",
+            <span style={{
+              display: "inline-flex",
+              width: "fit-content",
+              alignItems: "center",
+              border: "1.5px solid #13947A",
+              borderRadius: "999px",
+              padding: "5px 14px",
+              fontFamily: "var(--font-inter)",
+              fontWeight: 500,
+              fontSize: "11px",
+              letterSpacing: "0.07em",
+              textTransform: "uppercase",
+              color: "#13947A",
+            }}>
+              Interaction · Vibe Coding · 2026
+            </span>
+
+            <p style={{
+              fontFamily: "var(--font-inter)",
               fontWeight: 400,
-              fontSize: "16px",
-              color: "#888",
-              lineHeight: 1.6,
-            }}
-            className="mt-4"
-          >
-            Una exploración. Una herramienta.
-            <br />
-            Para cualquier persona, en cualquier momento.
-          </p>
+              fontSize: "clamp(14px, 1.2vw, 16px)",
+              color: "#3A3060",
+              lineHeight: 1.65,
+              maxWidth: "400px",
+              opacity: 0.8,
+            }}>
+              Una exploración. Una herramienta.
+              Para cualquier persona, en cualquier momento.
+            </p>
 
-          <div className="mt-8">
             <a
               href="https://veroal0032.github.io/Breeeeeath/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                display: "inline-block",
-                background: "#7EB8F7",
+                display: "inline-flex",
+                width: "fit-content",
+                alignItems: "center",
+                gap: "8px",
+                padding: "12px 28px",
+                background: "#13947A",
                 color: "#fff",
-                borderRadius: "100px",
-                padding: "14px 32px",
-                fontFamily: "var(--font-display, 'DM Sans', sans-serif)",
+                borderRadius: "999px",
+                fontFamily: "var(--font-darker-grotesque)",
                 fontWeight: 700,
                 fontSize: "15px",
                 textDecoration: "none",
-                transition: "filter 0.2s ease, transform 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLAnchorElement;
-                el.style.filter = "brightness(110%)";
-                el.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLAnchorElement;
-                el.style.filter = "brightness(100%)";
-                el.style.transform = "translateY(0)";
               }}
             >
               Respira ahora →
             </a>
+          </div>
+
+          {/* Right — imagen hero */}
+          <div style={{ position: "relative", width: "100%", height: "420px", borderRadius: "16px 16px 0 0", overflow: "hidden", alignSelf: "end" }}>
+            <Image
+              src="/images/breeeeeath/hero.png"
+              alt="Breeeeeath app"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+            />
           </div>
         </div>
       </section>

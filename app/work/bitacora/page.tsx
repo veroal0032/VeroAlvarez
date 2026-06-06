@@ -64,7 +64,7 @@ export default function BitacoraPage() {
               textTransform: "uppercase",
               color: "#553d6e",
             }}>
-              Web Design · Canva Sites · 2025
+              Web Design · Canva Sites · 2026
             </span>
 
             <p style={{
@@ -103,7 +103,7 @@ export default function BitacoraPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px 16px 0 0", overflow: "hidden" }}>
+          <div style={{ position: "relative", width: "100%", height: "420px", borderRadius: "16px 16px 0 0", overflow: "hidden", alignSelf: "end" }}>
             <Image
               src="/images/bitacora/hero.png"
               alt="Bitácora Psicológica"
