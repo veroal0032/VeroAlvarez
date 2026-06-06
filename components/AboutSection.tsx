@@ -43,7 +43,7 @@ export default function AboutSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 72px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '80px', boxSizing: 'border-box' }}
+        style={{ maxWidth: '1440px', margin: '0 auto', padding: '80px clamp(24px, 5vw, 80px) 80px clamp(24px, 17.7vw, 255px)', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '80px', boxSizing: 'border-box' }}
       >
         {/* texto */}
         <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>

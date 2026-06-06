@@ -499,10 +499,11 @@ export default function ProjectCarousel() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="px-6 md:px-12 lg:px-20 max-w-6xl mx-auto mb-10"
+        className="mb-10"
+        style={{ paddingLeft: 'clamp(24px, 17.7vw, 255px)', paddingRight: 'clamp(24px, 5vw, 80px)' }}
       >
         <h2
-          className="text-center md:text-right mb-2 md:mb-0"
+          className="text-center md:text-left mb-2 md:mb-0"
           style={{
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 800,

@@ -93,14 +93,14 @@ export default function BreeeeeathPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div className="breeeeeath-img-wrap" style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", height: "480px", alignSelf: "end" }}>
+          <div className="breeeeeath-img-wrap" style={{ position: "relative", width: "100%", height: "480px", alignSelf: "end", display: "flex", justifyContent: "center" }}>
             <Image
               src="/images/breeeeeath/hero.png"
               alt="Breeeeeath app"
-              width={380}
-              height={580}
+              fill
               priority
-              style={{ maxHeight: "480px", width: "auto", display: "block", objectFit: "contain", objectPosition: "center bottom" }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: "contain", objectPosition: "center bottom" }}
             />
           </div>
         </div>
@@ -170,8 +170,7 @@ export default function BreeeeeathPage() {
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-grid > div:first-child { padding-bottom: 0 !important; }
-          .breeeeeath-img-wrap { height: auto !important; }
-          .breeeeeath-img-wrap img { max-height: 280px !important; }
+          .breeeeeath-img-wrap { height: 280px !important; }
         }
       `}</style>
     </main>
