@@ -494,16 +494,29 @@ export default function ProjectCarousel() {
 
   return (
     <section id="projects" className="pt-8 pb-8 md:py-20">
+      <style>{`
+        .projects-header {
+          padding-left: 24px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        @media (min-width: 768px) {
+          .projects-header {
+            padding-left: clamp(24px, 17.7vw, 255px);
+            padding-right: clamp(24px, 5vw, 80px);
+            text-align: left;
+          }
+        }
+      `}</style>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mb-10"
-        style={{ paddingLeft: 'clamp(24px, 17.7vw, 255px)', paddingRight: 'clamp(24px, 5vw, 80px)' }}
+        className="mb-10 projects-header"
       >
         <h2
-          className="text-center md:text-left mb-2 md:mb-0"
+          className="mb-2 md:mb-0"
           style={{
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 800,
