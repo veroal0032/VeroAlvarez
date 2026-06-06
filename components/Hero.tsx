@@ -69,7 +69,7 @@ export default function Hero() {
           {/* TAG BUENOS AIRES — fuera del 1440px, top = 261+204 */}
           <motion.div
             {...floatY(3)}
-            style={{ position: 'absolute', top: '465px', left: '48px', background: '#F7D974', color: '#3d3200', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
+            style={{ position: 'absolute', top: '465px', left: '255px', background: '#F7D974', color: '#3d3200', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
           >
             📍 Buenos Aires
           </motion.div>
