@@ -36,8 +36,9 @@ export default function AboutSection() {
     <section id="about" style={{ background: '#FAFAF7' }}>
 
       {/* ── DESKTOP ── */}
+      <div className="hidden md:block">
       <motion.div
-        className="hidden md:flex"
+        className=""
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -90,6 +91,7 @@ export default function AboutSection() {
           ))}
         </div>
       </motion.div>
+      </div>
 
       {/* ── MOBILE ── */}
       <div
