@@ -493,7 +493,7 @@ export default function ProjectCarousel() {
   }, [])
 
   return (
-    <section id="projects" className="pt-8 pb-20 md:py-20">
+    <section id="projects" className="pt-8 pb-8 md:py-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
