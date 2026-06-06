@@ -122,7 +122,7 @@ export default function Hero() {
       {/* MOBILE */}
       <section
         className="hero-mobile"
-        style={{ display: 'none', background: '#FAFAF7', position: 'relative', height: '420px' }}
+        style={{ display: 'none', background: '#FAFAF7', position: 'relative', height: '360px' }}
       >
         {/* Stack horizontal — contenedor absoluto top 55 */}
         <div style={{ position: 'absolute', top: '55px', left: 0, right: 0, width: '100%' }}>
@@ -155,8 +155,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hora — top 300, right 139 */}
-          <p style={{ position: 'absolute', top: '300px', right: '139px', color: '#999', fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', letterSpacing: '0.02em', margin: 0, whiteSpace: 'nowrap' }}>
+          {/* Hora — top 290, centrada */}
+          <p style={{ position: 'absolute', top: '290px', left: '50%', transform: 'translateX(-50%)', color: '#999', fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', letterSpacing: '0.02em', margin: 0, whiteSpace: 'nowrap' }}>
             {timeStr}
           </p>
 

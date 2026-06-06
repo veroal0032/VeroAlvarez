@@ -52,15 +52,15 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center md:items-center justify-between gap-8"
-        style={{ height: '100px' }}
+        className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-4 py-6 md:py-0"
+        style={{ minHeight: '100px' }}
       >
         {/* Text */}
         <h2
           style={{
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 900,
-            fontSize: '56px',
+            fontSize: 'clamp(32px, 5vw, 56px)',
             color: '#FAFAF7',
             lineHeight: 1.1,
           }}
