@@ -46,7 +46,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer id="contact" style={{ background: '#C2E0FF' }}>
+    <footer id="contact" style={{ background: '#A8D4F5' }}>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function Footer() {
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 900,
             fontSize: 'clamp(24px, 3vw, 32px)',
-            color: '#0a3d7a',
+            color: '#FAFAF7',
             lineHeight: 1.1,
           }}
         >
@@ -80,16 +80,16 @@ export default function Footer() {
                 width: '42px',
                 height: '42px',
                 borderRadius: '50%',
-                background: 'rgba(10,61,122,0.1)',
+                background: 'rgba(250,250,247,0.2)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#0a3d7a',
+                color: '#FAFAF7',
                 transition: 'background 0.2s ease',
               }}
               onMouseEnter={(e) => {
                 ;(e.currentTarget as HTMLAnchorElement).style.background =
-                  'rgba(10,61,122,0.2)'
+                  'rgba(250,250,247,0.3)'
               }}
               onMouseLeave={(e) => {
                 ;(e.currentTarget as HTMLAnchorElement).style.background =

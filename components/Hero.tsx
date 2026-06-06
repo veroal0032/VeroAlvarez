@@ -74,10 +74,10 @@ export default function Hero() {
             📍 Buenos Aires
           </motion.div>
 
-          {/* TAG OPEN TO WORK — fuera del 1440px, top = 261+225, debajo del nombre */}
+          {/* TAG OPEN TO WORK — top: 204px de la sección, centrado en viewport */}
           <motion.div
             {...floatY(3.5, 0.5)}
-            style={{ position: 'absolute', top: '486px', left: '315px', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 2, whiteSpace: 'nowrap' }}
+            style={{ position: 'absolute', top: '204px', left: '50%', transform: 'translateX(-50%)', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 3, whiteSpace: 'nowrap' }}
           >
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
