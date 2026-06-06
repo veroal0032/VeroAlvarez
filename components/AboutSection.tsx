@@ -95,8 +95,8 @@ export default function AboutSection() {
 
       {/* ── MOBILE ── */}
       <div
-        className="md:hidden"
-        style={{ padding: '40px 20px 60px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}
+        className="flex flex-col md:hidden"
+        style={{ padding: '40px 20px 60px', boxSizing: 'border-box' }}
       >
         <h2 style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 800, fontSize: '32px', color: '#333', lineHeight: 1, margin: '0 0 20px', textAlign: 'center' }}>
           About me

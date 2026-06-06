@@ -93,14 +93,14 @@ export default function BreeeeeathPage() {
           </div>
 
           {/* Right — imagen hero */}
-          <div style={{ borderRadius: "16px 16px 0 0", overflow: "hidden", alignSelf: "end" }}>
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", height: "480px", alignSelf: "end" }}>
             <Image
               src="/images/breeeeeath/hero.png"
               alt="Breeeeeath app"
-              width={800}
-              height={560}
+              width={560}
+              height={480}
               priority
-              style={{ width: "100%", height: "auto", display: "block", objectFit: "cover", objectPosition: "center top" }}
+              style={{ maxHeight: "480px", width: "auto", display: "block", objectFit: "contain", objectPosition: "center bottom" }}
             />
           </div>
         </div>
