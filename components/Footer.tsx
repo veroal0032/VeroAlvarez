@@ -52,7 +52,8 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col md:flex-row items-center md:items-center justify-between gap-8"
+        className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center md:items-center justify-between gap-8"
+        style={{ height: '100px' }}
       >
         {/* Text */}
         <h2

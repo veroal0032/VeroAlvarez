@@ -47,7 +47,7 @@ export default function Hero() {
           <div style={{ position: 'absolute', top: '261px', left: 0, right: 0, width: '1440px', height: 'fit-content' }}>
 
             {/* NOMBRE */}
-            <div style={{ position: 'absolute', top: '33px', left: '48px', zIndex: 2 }}>
+            <div style={{ position: 'absolute', top: '33px', left: '255px', zIndex: 2 }}>
               <p style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 900, fontSize: '80px', color: '#333', lineHeight: 0.92, letterSpacing: '-0.03em', margin: 0 }}>
                 Verónica
               </p>
@@ -74,10 +74,10 @@ export default function Hero() {
             📍 Buenos Aires
           </motion.div>
 
-          {/* TAG OPEN TO WORK — top: 204px de la sección, centrado en viewport */}
+          {/* TAG OPEN TO WORK — top: 204px, left: 255px */}
           <motion.div
             {...floatY(3.5, 0.5)}
-            style={{ position: 'absolute', top: '204px', left: '50%', transform: 'translateX(-50%)', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 3, whiteSpace: 'nowrap' }}
+            style={{ position: 'absolute', top: '204px', left: '255px', background: '#CFA2FC', color: '#4a0080', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '12px', padding: '6px 14px', borderRadius: '100px', zIndex: 3, whiteSpace: 'nowrap' }}
           >
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B00FF', display: 'inline-block' }} />
