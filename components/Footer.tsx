@@ -61,7 +61,7 @@ export default function Footer() {
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 900,
             fontSize: 'clamp(32px, 5vw, 56px)',
-            color: '#FAFAF7',
+            color: '#ffffff',
             lineHeight: 1.1,
           }}
         >
@@ -85,7 +85,7 @@ export default function Footer() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#FAFAF7',
+                color: '#ffffff',
                 transition: 'background 0.2s ease',
               }}
               onMouseEnter={(e) => {
