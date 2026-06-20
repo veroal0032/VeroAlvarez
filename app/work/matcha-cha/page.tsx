@@ -1,4 +1,4 @@
-import { DM_Sans } from "next/font/google";
+﻿import { DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import WorkSplitLayout from "@/components/WorkSplitLayout";
@@ -37,7 +37,7 @@ export default function MatchaChaPage() {
         }}
       >
         <Link
-          href="/explore"
+          href="/"
           style={{
             fontFamily: "var(--font-geist-sans), sans-serif",
             fontSize: 13,

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
@@ -224,7 +224,7 @@ export default function ArtPage() {
         }}
       >
         <Link
-          href="/explore"
+          href="/"
           style={{
             fontFamily: "var(--font-dm-sans), sans-serif",
             fontSize: 13,
@@ -331,7 +331,7 @@ export default function ArtPage() {
                 className="text-sm text-[#888] max-w-sm mx-auto"
                 style={{ fontFamily: "var(--font-dm-sans), sans-serif", margin: "0 0 20px" }}
               >
-                I&apos;m photographing pieces as I finish them — check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
+                I&apos;m photographing pieces as I finish them â€” check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
               </p>
               <a
                 href="mailto:veroexplores94@gmail.com"
@@ -349,7 +349,7 @@ export default function ArtPage() {
                   borderRadius: 24,
                 }}
               >
-                Contact me →
+                Contact me â†’
               </a>
             </div>
           </div>

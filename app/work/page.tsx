@@ -1,4 +1,4 @@
-import { DM_Sans } from "next/font/google";
+﻿import { DM_Sans } from "next/font/google";
 import Link from "next/link";
 import WorkSplitLayout from "@/components/WorkSplitLayout";
 
@@ -37,7 +37,7 @@ export default function WorkPage() {
         }}
       >
         <Link
-          href="/explore"
+          href="/"
           style={{
             fontFamily: "var(--font-geist-sans), sans-serif",
             fontSize: 13,
@@ -47,7 +47,7 @@ export default function WorkPage() {
             letterSpacing: "0.01em",
           }}
         >
-          VerÃ³nica Alvarez
+          Verónica Alvarez
         </Link>
 
         <div className="work-nav-links" style={{ display: "flex", gap: 28 }}>

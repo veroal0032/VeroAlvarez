@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-/* ── Types ──────────────────────────────────────────────────── */
+/* â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 interface ProjectImage {
   src: string;
   tag: string;
@@ -39,11 +39,11 @@ interface LightboxState {
   index: number;
 }
 
-/* ── Data ───────────────────────────────────────────────────── */
+/* â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const projects: Project[] = [
   {
     id: "01",
-    title: "CIMER — Centro de Rehabilitación y Medicina Regenerativa",
+    title: "CIMER â€” Centro de Rehabilitación y Medicina Regenerativa",
     location: "Las Mercedes, Caracas · VE",
     year: "2024",
     type: "Comercial",
@@ -79,7 +79,7 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "Kitchen Remodeling — Florida",
+    title: "Kitchen Remodeling â€” Florida",
     location: "Florida · USA",
     year: "2024",
     type: "Residencial",
@@ -105,7 +105,7 @@ const projects: Project[] = [
   },
   {
     id: "03",
-    title: "Hector's Bedroom — Diseño Residencial",
+    title: "Hector's Bedroom â€” Diseño Residencial",
     location: "Caracas · VE",
     year: "2023",
     type: "Residencial",
@@ -136,7 +136,7 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    title: "Parley Office — Espacio Corporativo",
+    title: "Parley Office â€” Espacio Corporativo",
     location: "Chacao, Caracas · VE",
     year: "2023",
     type: "Comercial",
@@ -164,7 +164,7 @@ const projects: Project[] = [
   },
 ];
 
-/* ── Thumbnail ──────────────────────────────────────────────── */
+/* â”€â”€ Thumbnail â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Thumbnail({
   image,
   projectTitle,
@@ -247,7 +247,7 @@ function Thumbnail({
   );
 }
 
-/* ── Image Grid ─────────────────────────────────────────────── */
+/* â”€â”€ Image Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function ImageGrid({
   project,
   onOpen,
@@ -321,7 +321,7 @@ function ImageGrid({
   );
 }
 
-/* ── Lightbox ───────────────────────────────────────────────── */
+/* â”€â”€ Lightbox â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Lightbox({
   state,
   onClose,
@@ -374,7 +374,7 @@ function Lightbox({
           padding: "4px 8px",
         }}
       >
-        ✕
+        âœ•
       </button>
 
       {/* Prev */}
@@ -393,7 +393,7 @@ function Lightbox({
             opacity: 0.7,
           }}
         >
-          ←
+          â†
         </button>
       )}
 
@@ -413,7 +413,7 @@ function Lightbox({
             opacity: 0.7,
           }}
         >
-          →
+          â†’
         </button>
       )}
 
@@ -450,7 +450,7 @@ function Lightbox({
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────── */
+/* â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export default function ArchitecturePage() {
   const [filter, setFilter] = useState<"All" | "Comercial" | "Residencial">("All");
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
@@ -496,7 +496,7 @@ export default function ArchitecturePage() {
         backgroundColor: "#ffffff",
         borderBottom: "1px solid #E8E6DF",
       }}>
-        <Link href="/explore" style={{
+        <Link href="/" style={{
           fontFamily: "var(--font-geist-sans), sans-serif",
           fontSize: 13,
           fontWeight: 500,
@@ -566,7 +566,7 @@ export default function ArchitecturePage() {
               lineHeight: 1.8,
             }}
           >
-            2017 — 2024
+            2017 â€” 2024
             <br />
             Venezuela · USA
             <br />
@@ -602,7 +602,7 @@ export default function ArchitecturePage() {
               margin: 0,
             }}
           >
-            Architect based in Buenos Aires. 7 years of practice in Venezuela and the USA — residential, commercial and corporate interiors.
+            Architect based in Buenos Aires. 7 years of practice in Venezuela and the USA â€” residential, commercial and corporate interiors.
           </p>
 
           {/* Filters */}
@@ -784,7 +784,7 @@ export default function ArchitecturePage() {
         </div>
 
         <Link
-          href="/explore"
+          href="/"
           style={{
             fontFamily: "var(--font-dm-sans), sans-serif",
             fontSize: 11,
@@ -795,7 +795,7 @@ export default function ArchitecturePage() {
             whiteSpace: "nowrap",
           }}
         >
-          Back to home →
+          Back to home â†’
         </Link>
       </footer>
     </div>

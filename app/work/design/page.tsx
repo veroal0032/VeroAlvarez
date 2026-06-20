@@ -1,4 +1,4 @@
-import { DM_Sans } from "next/font/google";
+﻿import { DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import Image from "next/image";
@@ -54,7 +54,7 @@ export default function DesignPage() {
         backgroundColor: "#ffffff",
         borderBottom: "1px solid #E8E6DF",
       }}>
-        <Link href="/explore" style={{
+        <Link href="/" style={{
           fontFamily: "var(--font-dm-sans), sans-serif",
           fontSize: 13,
           fontWeight: 500,
@@ -153,7 +153,7 @@ export default function DesignPage() {
                     margin: "4px 0 0",
                     letterSpacing: "0.03em",
                   }}>
-                    View on Behance →
+                    View on Behance â†’
                   </p>
                 )}
               </div>
@@ -215,7 +215,7 @@ export default function DesignPage() {
         </div>
 
         <Link
-          href="/explore"
+          href="/"
           style={{
             fontFamily: "var(--font-dm-sans), sans-serif",
             fontSize: 11,
@@ -226,7 +226,7 @@ export default function DesignPage() {
             whiteSpace: "nowrap",
           }}
         >
-          Back to home →
+          Back to home â†’
         </Link>
       </footer>
     </main>

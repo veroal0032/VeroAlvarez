@@ -1,4 +1,4 @@
-import { DM_Sans } from "next/font/google";
+﻿import { DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import Image from "next/image";
@@ -62,7 +62,7 @@ export default function PhotographyPage() {
     >
       {/* Nav */}
       <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", height: 52, backgroundColor: "#ffffff", borderBottom: "1px solid #E8E6DF" }}>
-        <Link href="/explore" style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 13, fontWeight: 500, color: "#4D4D4D", textDecoration: "none", letterSpacing: "0.01em" }}>
+        <Link href="/" style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 13, fontWeight: 500, color: "#4D4D4D", textDecoration: "none", letterSpacing: "0.01em" }}>
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
@@ -169,7 +169,7 @@ export default function PhotographyPage() {
                 className="text-sm text-[#888] max-w-sm mx-auto"
                 style={{ fontFamily: "var(--font-dm-sans), sans-serif", margin: "0 0 20px" }}
               >
-                I&apos;m photographing pieces as I finish them — check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
+                I&apos;m photographing pieces as I finish them â€” check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
               </p>
               <a
                 href="mailto:veroexplores94@gmail.com"
@@ -196,7 +196,7 @@ export default function PhotographyPage() {
 
       {/* Back to home */}
       <div style={{ borderTop: "1px solid #E8E6DF", padding: "32px 40px", display: "flex", justifyContent: "flex-end" }}>
-        <Link href="/explore" style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "#B0AEA6", textDecoration: "none", whiteSpace: "nowrap" }}>
+        <Link href="/" style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "#B0AEA6", textDecoration: "none", whiteSpace: "nowrap" }}>
           Back to home &rarr;
         </Link>
       </div>
