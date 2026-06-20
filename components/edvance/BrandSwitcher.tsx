@@ -43,7 +43,7 @@ export default function BrandSwitcher() {
               borderRadius: '999px',
               border: 'none',
               cursor: 'pointer',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-dm-sans)',
               fontWeight: 500,
               fontSize: '13px',
               background: active === b.key ? b.color : 'transparent',
@@ -81,7 +81,7 @@ export default function BrandSwitcher() {
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.2 }}
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
             fontSize: '13px',
             color: '#888888',

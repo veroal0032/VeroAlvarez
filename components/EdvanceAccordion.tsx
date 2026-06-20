@@ -56,7 +56,7 @@ function AccordionItem({
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <span
             style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-dm-sans)',
               fontWeight: 500,
               fontSize: '12px',
               color: accentColor,
@@ -70,8 +70,8 @@ function AccordionItem({
             style={{
               fontFamily: 'var(--font-darker-grotesque)',
               fontWeight: 700,
-              fontSize: '22px',
-              color: '#333333',
+              fontSize: '17px',
+              color: '#4D4D4D',
               lineHeight: 1,
             }}
           >
@@ -187,7 +187,7 @@ export function SectionText({ children }: { children: React.ReactNode }) {
   return (
     <p
       style={{
-        fontFamily: 'var(--font-inter)',
+        fontFamily: 'var(--font-dm-sans)',
         fontWeight: 400,
         fontSize: '15px',
         color: '#555555',
@@ -292,7 +292,7 @@ export function SectionImage({
     >
       <p
         style={{
-          fontFamily: 'var(--font-inter)',
+          fontFamily: 'var(--font-dm-sans)',
           fontWeight: 400,
           fontSize: '11px',
           color: '#aaaaaa',

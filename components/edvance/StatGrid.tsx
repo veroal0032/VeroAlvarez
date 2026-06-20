@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 
 const STATS = [
   { num: 14,  label: 'Component\nsets' },
-  { num: 94,  label: 'Variantes\ntotales' },
-  { num: 4,   label: 'Marcas\n/ modos' },
-  { num: 103, label: 'Tokens\nsemánticos' },
+  { num: 94,  label: 'Total\nvariants' },
+  { num: 4,   label: 'Brands\n/ modes' },
+  { num: 103, label: 'Semantic\ntokens' },
 ]
 
 function useCountUp(target: number, duration = 1200, active: boolean) {
@@ -44,7 +44,7 @@ function StatCell({ num, label, active }: { num: number; label: string; active: 
     <div
       className="stat-cell"
       style={{
-        background: '#FAFAF7',
+        background: '#ffffff',
         padding: '28px 32px',
         display: 'flex',
         flexDirection: 'column',
@@ -67,7 +67,7 @@ function StatCell({ num, label, active }: { num: number; label: string; active: 
       </span>
       <span
         style={{
-          fontFamily: 'var(--font-inter)',
+          fontFamily: 'var(--font-dm-sans)',
           fontWeight: 400,
           fontSize: '13px',
           color: '#888888',
@@ -88,7 +88,7 @@ export default function StatGrid({ active }: { active: boolean }) {
         {/* Text left */}
         <p
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
             fontSize: '15px',
             color: '#666666',
@@ -96,8 +96,8 @@ export default function StatGrid({ active }: { active: boolean }) {
             textAlign: 'left',
           }}
         >
-          4 productos EdTech distintos, cada equipo diseñando por su cuenta. La misma
-          UI con 4 versiones diferentes, retrabajo constante, imposible de escalar.
+          4 separate EdTech products, each team designing on their own. The same
+          UI with 4 different versions, constant rework, impossible to scale.
         </p>
 
         {/* Stats grid right */}

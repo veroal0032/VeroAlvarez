@@ -34,10 +34,10 @@ export default function BackButton() {
         cursor: 'pointer',
       }}
     >
-      <span style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: '16px', color: '#333333', lineHeight: 1 }}>
+      <span style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: '16px', color: '#4D4D4D', lineHeight: 1 }}>
         ←
       </span>
-      <span style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '13px', color: '#333333', lineHeight: 1 }}>
+      <span style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '13px', color: '#4D4D4D', lineHeight: 1 }}>
         Volver
       </span>
     </motion.button>

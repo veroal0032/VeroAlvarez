@@ -115,7 +115,7 @@ export default function LoginCarousel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.18 }}
-          style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', color: '#aaaaaa', margin: 0 }}
+          style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 400, fontSize: '12px', color: '#aaaaaa', margin: 0 }}
         >
           Login · {slide.label} — {index + 1} / {SLIDES.length}
         </motion.p>

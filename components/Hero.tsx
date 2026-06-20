@@ -39,7 +39,7 @@ export default function Hero() {
       {/* DESKTOP */}
       <section
         className="hero-desktop"
-        style={{ position: 'relative', width: '100%', height: '640px', background: '#FAFAF7', overflow: 'visible' }}
+        style={{ position: 'relative', width: '100%', height: '640px', background: '#ffffff', overflow: 'visible' }}
       >
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
 
@@ -122,7 +122,7 @@ export default function Hero() {
       {/* MOBILE */}
       <section
         className="hero-mobile"
-        style={{ display: 'none', background: '#FAFAF7', position: 'relative', height: '360px' }}
+        style={{ display: 'none', background: '#ffffff', position: 'relative', height: '360px' }}
       >
         {/* Stack horizontal — contenedor absoluto top 55 */}
         <div style={{ position: 'absolute', top: '55px', left: 0, right: 0, width: '100%' }}>

@@ -56,11 +56,11 @@ function AccordionItem({
               width: '36px',
               height: '36px',
               borderRadius: '10px',
-              background: isOpen ? '#333333' : '#f0ede6',
+              background: isOpen ? '#4D4D4D' : '#f0ede6',
               fontFamily: 'var(--font-inter)',
               fontWeight: 500,
               fontSize: '11px',
-              color: isOpen ? '#FAFAF7' : '#888888',
+              color: isOpen ? '#ffffff' : '#888888',
               flexShrink: 0,
               transition: 'background 0.25s ease, color 0.25s ease',
               letterSpacing: '0.02em',
@@ -75,7 +75,7 @@ function AccordionItem({
               fontFamily: 'var(--font-darker-grotesque)',
               fontWeight: 700,
               fontSize: '22px',
-              color: '#333333',
+              color: '#4D4D4D',
               lineHeight: 1,
             }}
           >
