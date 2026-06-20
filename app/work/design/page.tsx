@@ -16,7 +16,7 @@ const PROJECTS = [
     title: "Compani",
     tags: "Branding · Graphic Design",
     image: "/images/compani/banner.png",
-    href: null,
+    href: "https://www.behance.net/gallery/251457961/Compani-coffee-pet-first",
   },
   {
     id: "palmira",

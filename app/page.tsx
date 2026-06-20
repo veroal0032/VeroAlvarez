@@ -42,12 +42,24 @@ export default function Home() {
           zIndex: 10,
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           padding: "22px 32px",
           borderBottom: "0.5px solid #D3D1C7",
           backgroundColor: "#ffffff",
         }}
       >
+        <span
+          style={{
+            fontFamily: "var(--font-geist-sans), sans-serif",
+            fontSize: 13,
+            fontWeight: 500,
+            letterSpacing: "0.01em",
+            color: "#4D4D4D",
+          }}
+        >
+          Verónica Alvarez
+        </span>
+
         <button
           onClick={() => setContactOpen(true)}
           style={{
