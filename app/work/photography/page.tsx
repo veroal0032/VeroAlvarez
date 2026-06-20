@@ -2,6 +2,7 @@
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import Image from "next/image";
+import WorkContactLink from "@/components/WorkContactLink";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -66,11 +67,7 @@ export default function PhotographyPage() {
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
-          {[{ label: "Contact", href: "mailto:veroexplores94@gmail.com" }].map(({ label, href }) => (
-            <Link key={label} href={href} style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 11, letterSpacing: "0.04em", color: "#888", textDecoration: "none" }}>
-              {label}
-            </Link>
-          ))}
+          <WorkContactLink fontFamily="var(--font-dm-sans), sans-serif" />
         </div>
       </nav>
 
@@ -169,7 +166,7 @@ export default function PhotographyPage() {
                 className="text-sm text-[#888] max-w-sm mx-auto"
                 style={{ fontFamily: "var(--font-dm-sans), sans-serif", margin: "0 0 20px" }}
               >
-                I&apos;m photographing pieces as I finish them â€” check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
+                I&apos;m photographing pieces as I finish them — check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
               </p>
               <a
                 href="mailto:veroexplores94@gmail.com"

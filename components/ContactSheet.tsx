@@ -31,7 +31,7 @@ const CONTACTS = [
       </svg>
     ),
     label: 'WhatsApp',
-    description: 'Escríbeme directo',
+    description: 'Message me directly',
     href: 'https://wa.me/5491127914007',
     target: '_blank' as const,
   },
@@ -152,12 +152,12 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
 
             {/* Título */}
             <h2 style={{
-              fontFamily: 'var(--font-darker-grotesque)',
-              fontWeight: 900,
-              fontSize: '36px',
+              fontFamily: 'var(--font-dm-sans), sans-serif',
+              fontWeight: 700,
+              fontSize: '28px',
               color: '#4D4D4D',
-              lineHeight: 1,
-              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
+              letterSpacing: '-0.01em',
               margin: '0 0 6px',
             }}>
               Let&apos;s talk
@@ -165,14 +165,14 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
 
             {/* Subtítulo */}
             <p style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-dm-sans), sans-serif',
               fontWeight: 400,
               fontSize: '13px',
               color: '#888888',
               margin: '0 0 24px',
               lineHeight: 1.5,
             }}>
-              Elige cómo quieres contactarme.
+              Choose how you&apos;d like to reach me.
             </p>
 
             {/* Cards */}
@@ -188,10 +188,11 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
                     alignItems: 'center',
                     gap: '16px',
                     padding: '18px 20px',
-                    background: '#A8D4F5',
+                    background: '#ffffff',
+                    border: '0.5px solid #D3D1C7',
                     borderRadius: '16px',
                     textDecoration: 'none',
-                    color: '#1A3A52',
+                    color: '#4D4D4D',
                     WebkitTapHighlightColor: 'transparent',
                   }}
                 >
@@ -200,11 +201,12 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
                     width: '44px',
                     height: '44px',
                     borderRadius: '12px',
-                    background: 'rgba(255,255,255,0.55)',
+                    background: '#F5F4F0',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
+                    color: '#4D4D4D',
                   }}>
                     {c.icon}
                   </div>
@@ -212,20 +214,20 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
                   {/* Texto */}
                   <div>
                     <p style={{
-                      fontFamily: 'var(--font-darker-grotesque)',
+                      fontFamily: 'var(--font-dm-sans), sans-serif',
                       fontWeight: 700,
-                      fontSize: '17px',
-                      color: '#1A3A52',
+                      fontSize: '15px',
+                      color: '#4D4D4D',
                       margin: 0,
                       lineHeight: 1.2,
                     }}>
                       {c.label}
                     </p>
                     <p style={{
-                      fontFamily: 'var(--font-inter)',
+                      fontFamily: 'var(--font-dm-sans), sans-serif',
                       fontWeight: 400,
                       fontSize: '12px',
-                      color: '#fff',
+                      color: '#888888',
                       margin: '2px 0 0',
                     }}>
                       {c.description}
@@ -233,7 +235,7 @@ export default function ContactSheet({ isOpen, onClose }: ContactSheetProps) {
                   </div>
 
                   {/* Flecha */}
-                  <div style={{ marginLeft: 'auto', color: '#1A3A52', opacity: 0.5 }}>
+                  <div style={{ marginLeft: 'auto', color: '#4D4D4D', opacity: 0.5 }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

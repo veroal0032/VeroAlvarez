@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import WorkContactLink from "@/components/WorkContactLink";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-/* â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Types ──────────────────────────────────────────────────── */
 interface ProjectImage {
   src: string;
   tag: string;
@@ -39,11 +40,11 @@ interface LightboxState {
   index: number;
 }
 
-/* â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Data ───────────────────────────────────────────────────── */
 const projects: Project[] = [
   {
     id: "01",
-    title: "CIMER â€” Centro de Rehabilitación y Medicina Regenerativa",
+    title: "CIMER — Centro de Rehabilitación y Medicina Regenerativa",
     location: "Las Mercedes, Caracas · VE",
     year: "2024",
     type: "Comercial",
@@ -79,7 +80,7 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "Kitchen Remodeling â€” Florida",
+    title: "Kitchen Remodeling — Florida",
     location: "Florida · USA",
     year: "2024",
     type: "Residencial",
@@ -105,7 +106,7 @@ const projects: Project[] = [
   },
   {
     id: "03",
-    title: "Hector's Bedroom â€” Diseño Residencial",
+    title: "Hector's Bedroom — Diseño Residencial",
     location: "Caracas · VE",
     year: "2023",
     type: "Residencial",
@@ -136,7 +137,7 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    title: "Parley Office â€” Espacio Corporativo",
+    title: "Parley Office — Espacio Corporativo",
     location: "Chacao, Caracas · VE",
     year: "2023",
     type: "Comercial",
@@ -164,7 +165,7 @@ const projects: Project[] = [
   },
 ];
 
-/* â”€â”€ Thumbnail â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Thumbnail ──────────────────────────────────────────────── */
 function Thumbnail({
   image,
   projectTitle,
@@ -247,7 +248,7 @@ function Thumbnail({
   );
 }
 
-/* â”€â”€ Image Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Image Grid ─────────────────────────────────────────────── */
 function ImageGrid({
   project,
   onOpen,
@@ -321,7 +322,7 @@ function ImageGrid({
   );
 }
 
-/* â”€â”€ Lightbox â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Lightbox ───────────────────────────────────────────────── */
 function Lightbox({
   state,
   onClose,
@@ -393,7 +394,7 @@ function Lightbox({
             opacity: 0.7,
           }}
         >
-          â†
+          ←
         </button>
       )}
 
@@ -413,7 +414,7 @@ function Lightbox({
             opacity: 0.7,
           }}
         >
-          â†’
+          →
         </button>
       )}
 
@@ -450,7 +451,7 @@ function Lightbox({
   );
 }
 
-/* â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Page ───────────────────────────────────────────────────── */
 export default function ArchitecturePage() {
   const [filter, setFilter] = useState<"All" | "Comercial" | "Residencial">("All");
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
@@ -507,20 +508,16 @@ export default function ArchitecturePage() {
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
-          {[
-            { label: "Resume", href: "/ALVAREZ%20VER%C3%B3NICA%20%20EN-AR.pdf", target: "_blank" },
-            { label: "Contact", href: "mailto:veroexplores94@gmail.com", target: "_blank" },
-          ].map(({ label, href, target }: { label: string; href: string; target?: string }) => (
-            <Link key={label} href={href} target={target} style={{
-              fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: 11,
-              letterSpacing: "0.04em",
-              color: "#888",
-              textDecoration: "none",
-            }}>
-              {label}
-            </Link>
-          ))}
+          <Link href="/ALVAREZ%20VER%C3%B3NICA%20%20EN-AR.pdf" target="_blank" style={{
+            fontFamily: "var(--font-geist-sans), sans-serif",
+            fontSize: 11,
+            letterSpacing: "0.04em",
+            color: "#888",
+            textDecoration: "none",
+          }}>
+            Resume
+          </Link>
+          <WorkContactLink fontFamily="var(--font-geist-sans), sans-serif" />
         </div>
       </nav>
       {lightbox && (
@@ -566,7 +563,7 @@ export default function ArchitecturePage() {
               lineHeight: 1.8,
             }}
           >
-            2017 â€” 2024
+            2017 — 2024
             <br />
             Venezuela · USA
             <br />
@@ -602,7 +599,7 @@ export default function ArchitecturePage() {
               margin: 0,
             }}
           >
-            Architect based in Buenos Aires. 7 years of practice in Venezuela and the USA â€” residential, commercial and corporate interiors.
+            Architect based in Buenos Aires. 7 years of practice in Venezuela and the USA — residential, commercial and corporate interiors.
           </p>
 
           {/* Filters */}
@@ -795,7 +792,7 @@ export default function ArchitecturePage() {
             whiteSpace: "nowrap",
           }}
         >
-          Back to home â†’
+          Back to home →
         </Link>
       </footer>
     </div>

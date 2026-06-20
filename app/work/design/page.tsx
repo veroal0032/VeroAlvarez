@@ -2,6 +2,7 @@
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import Image from "next/image";
+import WorkContactLink from "@/components/WorkContactLink";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -65,19 +66,7 @@ export default function DesignPage() {
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
-          {[
-            { label: "Contact", href: "mailto:veroexplores94@gmail.com" },
-          ].map(({ label, href }) => (
-            <Link key={label} href={href} style={{
-              fontFamily: "var(--font-dm-sans), sans-serif",
-              fontSize: 11,
-              letterSpacing: "0.04em",
-              color: "#888",
-              textDecoration: "none",
-            }}>
-              {label}
-            </Link>
-          ))}
+          <WorkContactLink fontFamily="var(--font-dm-sans), sans-serif" />
         </div>
       </nav>
 
@@ -102,25 +91,25 @@ export default function DesignPage() {
       <section className="design-projects" style={{
         padding: "40px 56px 120px",
         display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateColumns: "repeat(auto-fill, 220px)",
         gap: 24,
       }}>
         {PROJECTS.map((p) => {
           const card = (
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, width: 220 }}>
               <div style={{
-                width: "100%",
-                aspectRatio: "4/3",
+                width: 220,
+                height: 165,
                 position: "relative",
                 overflow: "hidden",
-                borderRadius: 8,
+                borderRadius: 0,
                 backgroundColor: "#F0EEEA",
               }}>
                 <Image
                   src={p.image}
                   alt={p.title}
                   fill
-                  sizes="33vw"
+                  sizes="220px"
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -153,7 +142,7 @@ export default function DesignPage() {
                     margin: "4px 0 0",
                     letterSpacing: "0.03em",
                   }}>
-                    View on Behance â†’
+                    View on Behance →
                   </p>
                 )}
               </div>
@@ -226,7 +215,7 @@ export default function DesignPage() {
             whiteSpace: "nowrap",
           }}
         >
-          Back to home â†’
+          Back to home →
         </Link>
       </footer>
     </main>

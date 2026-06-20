@@ -2,6 +2,7 @@
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import WorkSplitLayout from "@/components/WorkSplitLayout";
+import WorkContactLink from "@/components/WorkContactLink";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -50,25 +51,20 @@ export default function EdvancePage() {
         </Link>
 
         <div className="work-nav-links" style={{ display: "flex", gap: 28 }}>
-          {[
-            { label: "Resume", href: "/ALVAREZ_V.pdf", target: "_blank" },
-            { label: "Contact", href: "mailto:veroexplores94@gmail.com", target: "_blank" },
-          ].map(({ label, href, target }: { label: string; href: string; target?: string }) => (
-            <Link
-              key={label}
-              href={href}
-              target={target}
-              style={{
-                fontFamily: "var(--font-geist-sans), sans-serif",
-                fontSize: 11,
-                letterSpacing: "0.04em",
-                color: "#888",
-                textDecoration: "none",
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+          <Link
+            href="/ALVAREZ_V.pdf"
+            target="_blank"
+            style={{
+              fontFamily: "var(--font-geist-sans), sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.04em",
+              color: "#888",
+              textDecoration: "none",
+            }}
+          >
+            Resume
+          </Link>
+          <WorkContactLink fontFamily="var(--font-geist-sans), sans-serif" />
         </div>
       </nav>
 

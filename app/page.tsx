@@ -1,20 +1,37 @@
+"use client";
+
+import { useState } from "react";
 import { GeistSans } from "geist/font/sans";
 import InfiniteCanvas from "@/components/InfiniteCanvas";
-import Link from "next/link";
+import ContactSheet from "@/components/ContactSheet";
 
 export default function Home() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <main
-      className={GeistSans.className}
+      className={`${GeistSans.className} home-main`}
       style={{
         width: "100vw",
-        height: "100vh",
-        overflow: "hidden",
         backgroundColor: "#ffffff",
         display: "flex",
         flexDirection: "column",
       }}
     >
+      <style>{`
+        .home-main {
+          height: 100vh;
+          overflow: hidden;
+        }
+        @media (max-width: 767px) {
+          .home-main {
+            height: auto;
+            min-height: 100vh;
+            overflow: visible;
+          }
+        }
+      `}</style>
+
       {/* Nav */}
       <nav
         style={{
@@ -31,29 +48,29 @@ export default function Home() {
           backgroundColor: "#ffffff",
         }}
       >
-        {[
-          { label: "Contact", href: "mailto:veroexplores94@gmail.com" },
-        ].map(({ label, href }) => (
-          <Link
-            key={label}
-            href={href}
-            style={{
-              fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: 11,
-              letterSpacing: "0.04em",
-              color: "#4D4D4D",
-              textDecoration: "none",
-            }}
-          >
-            {label}
-          </Link>
-        ))}
+        <button
+          onClick={() => setContactOpen(true)}
+          style={{
+            fontFamily: "var(--font-geist-sans), sans-serif",
+            fontSize: 11,
+            letterSpacing: "0.04em",
+            color: "#4D4D4D",
+            background: "transparent",
+            border: "none",
+            padding: 0,
+            cursor: "pointer",
+          }}
+        >
+          Contact
+        </button>
       </nav>
 
       {/* Canvas */}
       <div style={{ flex: 1, marginTop: 61, position: "relative" }}>
         <InfiniteCanvas />
       </div>
+
+      <ContactSheet isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </main>
   );
 }

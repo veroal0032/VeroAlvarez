@@ -42,9 +42,29 @@ body {
   scrollbar-width: none;
 }
 
+/* WorkContactLink — desktop shows mailto link, mobile opens ContactSheet */
+.work-contact-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .work-contact-desktop {
+    display: none !important;
+  }
+  .work-contact-mobile {
+    display: inline !important;
+  }
+}
+
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE — UX/UI work pages (WorkSplitLayout)
    ══════════════════════════════════════════════════════════════ */
+
+/* Desktop: hide current project from the "more projects" sidebar (it already has its own large thumbnail) */
+@media (min-width: 769px) {
+  .work-project-card--active {
+    display: none !important;
+  }
+}
 
 /* Tablet: 769–1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -82,7 +102,8 @@ body {
   .work-nav-links {
     gap: 14px !important;
   }
-  .work-nav-links a {
+  .work-nav-links a,
+  .work-nav-links button {
     font-size: 10px !important;
   }
 
@@ -106,19 +127,52 @@ body {
     overflow: visible !important;
     padding: 20px 16px !important;
   }
+  .work-thumb-static {
+    display: none !important;
+  }
   .work-split-center {
-    order: 1;
+    order: 3;
     overflow: visible !important;
     max-width: 100% !important;
   }
   .work-split-right {
-    order: 3;
+    order: 1;
     overflow: visible !important;
     padding: 16px !important;
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    border-top: 0.5px solid #EBEBEB;
+    border-bottom: 0.5px solid #EBEBEB;
+  }
+  .work-projects-label {
+    color: #aaa !important;
+  }
+  .work-projects-scroll {
+    flex-direction: row !important;
     gap: 12px !important;
-    flex-direction: unset !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximate;
+    margin: 0 -16px;
+    padding: 4px 16px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .work-projects-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .work-project-card {
+    flex-shrink: 0;
+    width: 104px !important;
+    scroll-snap-align: start;
+  }
+  .work-project-card--active {
+    opacity: 1 !important;
+  }
+  .work-project-card--active > div:first-child {
+    outline: 1.5px solid #4D4D4D;
+    outline-offset: 2px;
   }
 
   /* Hero image */
@@ -209,14 +263,25 @@ body {
     font-size: 24px !important;
   }
   .design-projects {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(auto-fill, 160px) !important;
+    justify-content: center !important;
+    gap: 16px !important;
     padding: 24px 16px 60px !important;
+  }
+  .design-projects > a > div,
+  .design-projects > div > div {
+    width: 160px !important;
+  }
+  .design-projects > a > div > div:first-child,
+  .design-projects > div > div > div:first-child {
+    width: 160px !important;
+    height: 120px !important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .design-projects {
-    grid-template-columns: repeat(2, 1fr) !important;
+    justify-content: center !important;
     padding: 32px 28px 80px !important;
   }
 }

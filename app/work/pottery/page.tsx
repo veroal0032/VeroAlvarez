@@ -2,6 +2,7 @@
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
 import Image from "next/image";
+import WorkContactLink from "@/components/WorkContactLink";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ const PIECES: Piece[] = [
     id: "bowl-01",
     name: "Organic Bowl No. 1",
     material: "Stoneware",
-    size: "14 Ã— 8 cm",
+    size: "14 × 8 cm",
     year: "2024",
     status: "Available",
     price: "USD 65",
@@ -35,7 +36,7 @@ const PIECES: Piece[] = [
     id: "vase-01",
     name: "Bud Vase",
     material: "Earthenware · Matte glaze",
-    size: "6 Ã— 18 cm",
+    size: "6 × 18 cm",
     year: "2024",
     status: "Sold",
     price: "USD 80",
@@ -45,7 +46,7 @@ const PIECES: Piece[] = [
     id: "cup-01",
     name: "Handbuilt Cup",
     material: "Stoneware · Soda-fired",
-    size: "8 Ã— 10 cm",
+    size: "8 × 10 cm",
     year: "2025",
     status: "Available",
     price: "USD 45",
@@ -55,7 +56,7 @@ const PIECES: Piece[] = [
     id: "plate-01",
     name: "Textured Plate",
     material: "Porcelain",
-    size: "22 Ã— 2 cm",
+    size: "22 × 2 cm",
     year: "2025",
     status: "Available",
     price: "USD 90",
@@ -65,7 +66,7 @@ const PIECES: Piece[] = [
     id: "bowl-02",
     name: "Deep Bowl No. 2",
     material: "Stoneware · Iron oxide",
-    size: "16 Ã— 10 cm",
+    size: "16 × 10 cm",
     year: "2025",
     status: "Available",
     price: "USD 70",
@@ -75,16 +76,12 @@ const PIECES: Piece[] = [
     id: "vase-02",
     name: "Tall Vessel",
     material: "Earthenware",
-    size: "9 Ã— 26 cm",
+    size: "9 × 26 cm",
     year: "2025",
     status: "Sold",
     price: "USD 110",
     image: null,
   },
-];
-
-const NAV_LINKS = [
-  { label: "Contact", href: "mailto:veroexplores94@gmail.com" },
 ];
 
 const isComingSoon = true;
@@ -126,21 +123,7 @@ export default function PotteryPage() {
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
-          {NAV_LINKS.map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              style={{
-                fontFamily: "var(--font-dm-sans), sans-serif",
-                fontSize: 11,
-                letterSpacing: "0.04em",
-                color: "#888",
-                textDecoration: "none",
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+          <WorkContactLink fontFamily="var(--font-dm-sans), sans-serif" />
         </div>
       </nav>
 
@@ -373,7 +356,7 @@ export default function PotteryPage() {
               className="text-sm text-[#888] max-w-sm mx-auto"
               style={{ fontFamily: "var(--font-dm-sans), sans-serif", margin: "0 0 20px" }}
             >
-              I&apos;m photographing pieces as I finish them â€” check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
+              I&apos;m photographing pieces as I finish them — check back soon, or reach out if you&apos;d like to see what&apos;s available right now.
             </p>
             <a
               href="mailto:veroexplores94@gmail.com"
@@ -391,7 +374,7 @@ export default function PotteryPage() {
                 borderRadius: 24,
               }}
             >
-              Contact me â†’
+              Contact me →
             </a>
           </div>
         </div>

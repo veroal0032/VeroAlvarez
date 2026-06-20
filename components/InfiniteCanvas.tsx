@@ -69,6 +69,99 @@ function scatterNonOverlapping(
 
 type Item = (typeof BASE_ITEMS)[0] & { cx: number; cy: number };
 
+const SHORT_ABOUT_TEXT =
+  "Architect turned multi-medium creator — ceramics, photography, design, and UX/UI. This space is where all of it lives together.";
+
+function MobileHome() {
+  const router = useRouter();
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        paddingTop: 32,
+        paddingBottom: 48,
+        gap: 24,
+      }}
+    >
+      <p
+        style={{
+          fontFamily: "var(--font-dm-sans), sans-serif",
+          fontSize: 13,
+          lineHeight: 1.7,
+          color: "#4D4D4D",
+          textAlign: "center",
+          padding: "0 28px",
+          margin: 0,
+        }}
+      >
+        {SHORT_ABOUT_TEXT}
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          margin: "0 24px",
+          borderTop: "0.5px solid #D3D1C7",
+        }}
+      >
+        {BASE_ITEMS.map((item) => (
+          <div
+            key={item.id}
+            onClick={() => item.href && router.push(item.href)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              padding: "16px 0",
+              borderBottom: "0.5px solid #D3D1C7",
+              cursor: item.href ? "pointer" : "default",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: 72,
+                height: 72,
+                flexShrink: 0,
+                backgroundColor: item.bg,
+              }}
+            >
+              {"image" in item && item.image && (
+                <Image
+                  src={item.image as string}
+                  alt={item.category}
+                  fill
+                  sizes="72px"
+                  style={{ objectFit: "cover" }}
+                />
+              )}
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-dm-sans), sans-serif",
+                fontSize: 13,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#4D4D4D",
+              }}
+            >
+              {item.category}
+            </div>
+            <div style={{ marginLeft: "auto", color: "#B0AEA6" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function InfiniteCanvas() {
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -83,6 +176,14 @@ export default function InfiniteCanvas() {
   const [items, setItems] = useState<Item[]>(() => withCenters(BASE_ITEMS));
   const [showHint, setShowHint] = useState(true);
   const [scattering, setScattering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const applyTransform = useCallback((x: number, y: number, animate = false) => {
     const el = universeRef.current;
@@ -204,6 +305,10 @@ export default function InfiniteCanvas() {
     setItems(next);
     setTimeout(() => setScattering(false), 500);
   };
+
+  if (isMobile) {
+    return <MobileHome />;
+  }
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>

@@ -9,7 +9,7 @@ import CosecharSections from "@/components/cosechar/CosecharSections";
 import BitacoraSections from "@/components/bitacora/BitacoraSections";
 import BreeeeeathSections from "@/components/breeeeeath/BreeeeeathSections";
 
-/* â”€â”€ Project list (right column) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Project list (right column) ─────────────────────────── */
 const PROJECTS = [
   {
     id: "petlink",
@@ -64,7 +64,7 @@ const PROJECTS = [
   },
 ];
 
-/* â”€â”€ Per-project config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Per-project config ───────────────────────────────────── */
 type ProjectId = "edvance" | "matcha" | "petlink" | "cosechar" | "bitacora" | "breeeeeath";
 
 interface ProjectConfig {
@@ -266,7 +266,7 @@ const PROJECT_CONFIG: Record<ProjectId, ProjectConfig> = {
   },
 };
 
-/* â”€â”€ Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Layout ───────────────────────────────────────────────── */
 export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
   const cfg = PROJECT_CONFIG[activeId];
 
@@ -281,7 +281,7 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
         gap: 0,
       }}
     >
-      {/* â”€â”€ LEFT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── LEFT ──────────────────────────────────────────── */}
       <div
         className="work-split-left"
         style={{
@@ -294,6 +294,7 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
         }}
       >
         <div
+          className="work-thumb-static"
           style={{
             width: 130,
             height: 130,
@@ -384,24 +385,9 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
           ))}
         </div>
 
-        <div style={{ marginTop: "auto", paddingTop: 16 }}>
-          <Link
-            href="/"
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              fontSize: 10,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "#ccc",
-              textDecoration: "none",
-            }}
-          >
-            â† Portfolio
-          </Link>
-        </div>
       </div>
 
-      {/* â”€â”€ CENTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CENTER ────────────────────────────────────────── */}
       <div
         className="work-split-center"
         style={{
@@ -495,12 +481,12 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
               whiteSpace: "nowrap",
             }}
           >
-            Back to home â†’
+            Back to home →
           </Link>
         </div>
       </div>
 
-      {/* â”€â”€ RIGHT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── RIGHT ─────────────────────────────────────────── */}
       <div
         className="work-split-right"
         style={{
@@ -513,6 +499,7 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
         }}
       >
         <span
+          className="work-projects-label"
           style={{
             fontFamily: "var(--font-dm-sans)",
             fontSize: 9,
@@ -523,55 +510,59 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
             display: "block",
           }}
         >
-          Projects
+          More projects
         </span>
 
-        {PROJECTS.filter((p) => p.id !== activeId).map((p) => {
-          return (
-            <Link
-              key={p.id}
-              href={p.href}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 5,
-                textDecoration: "none",
-                opacity: 0.3,
-                transition: "opacity 0.2s ease",
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.3")}
-            >
-              <div
+        <div className="work-projects-scroll" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          {[...PROJECTS].sort((a, b) => (a.id === activeId ? -1 : b.id === activeId ? 1 : 0)).map((p) => {
+            const isActive = p.id === activeId;
+            return (
+              <Link
+                key={p.id}
+                href={p.href}
+                className={`work-project-card${isActive ? " work-project-card--active" : ""}`}
                 style={{
-                  width: "100%",
-                  aspectRatio: "1 / 1",
-                  backgroundColor: (p as any).thumbBg ?? "#E0DDD6",
-                  borderRadius: 5,
-                  overflow: "hidden",
-                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 5,
+                  textDecoration: "none",
+                  opacity: isActive ? 1 : 0.3,
+                  transition: "opacity 0.2s ease",
                 }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = isActive ? "1" : "0.3")}
               >
-                {p.image && (
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    fill
-                    style={{ objectFit: (p as any).thumbContain ? "contain" : "cover", objectPosition: (p as any).thumbPosition ?? "top center" }}
-                  />
-                )}
-              </div>
-              <div>
-                <div style={{ fontFamily: "var(--font-dm-sans)", fontSize: 10, color: "#4D4D4D", lineHeight: 1.3 }}>
-                  {p.title}
+                <div
+                  style={{
+                    width: "100%",
+                    aspectRatio: "1 / 1",
+                    backgroundColor: (p as any).thumbBg ?? "#E0DDD6",
+                    borderRadius: 5,
+                    overflow: "hidden",
+                    position: "relative",
+                  }}
+                >
+                  {p.image && (
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      style={{ objectFit: (p as any).thumbContain ? "contain" : "cover", objectPosition: (p as any).thumbPosition ?? "top center" }}
+                    />
+                  )}
                 </div>
-                <div style={{ fontFamily: "var(--font-dm-sans)", fontSize: 9, color: "#aaa", letterSpacing: "0.04em", marginTop: 1 }}>
-                  {p.tags}
+                <div>
+                  <div style={{ fontFamily: "var(--font-dm-sans)", fontSize: 10, color: "#4D4D4D", lineHeight: 1.3 }}>
+                    {p.title}
+                  </div>
+                  <div style={{ fontFamily: "var(--font-dm-sans)", fontSize: 9, color: "#aaa", letterSpacing: "0.04em", marginTop: 1 }}>
+                    {p.tags}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
