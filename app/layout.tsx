@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import {
-  Darker_Grotesque,
   Inter,
   Caveat,
   Montserrat,
@@ -9,14 +8,8 @@ import {
   Fredoka,
   Poppins,
 } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
-
-const darkerGrotesque = Darker_Grotesque({
-  subsets: ['latin'],
-  weight: ['700', '800', '900'],
-  variable: '--font-darker-grotesque',
-  display: 'swap',
-})
 
 const inter = Inter({
   subsets: ['latin'],
@@ -86,9 +79,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${darkerGrotesque.variable} ${inter.variable} ${caveat.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${nunito.variable} ${fredoka.variable} ${poppins.variable}`}
+      className={`${GeistSans.variable} ${inter.variable} ${caveat.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${nunito.variable} ${fredoka.variable} ${poppins.variable}`}
     >
-      <body className="bg-[#FAFAF7] text-[#333333] font-inter antialiased">
+      <body className="bg-[#ffffff] text-[#4D4D4D] font-inter antialiased">
         {children}
       </body>
     </html>

@@ -59,7 +59,7 @@ export default function CourseCard({ brand }: { brand: BrandKey }) {
       >
         <span
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
             fontSize: '12px',
             color: t.dot,
@@ -85,7 +85,7 @@ export default function CourseCard({ brand }: { brand: BrandKey }) {
           />
           <span
             style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-dm-sans)',
               fontWeight: 500,
               fontSize: '11px',
               color: t.dot,
@@ -111,7 +111,7 @@ export default function CourseCard({ brand }: { brand: BrandKey }) {
         {/* Subtitle */}
         <p
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
             fontSize: '12px',
             color: '#888888',
@@ -123,7 +123,7 @@ export default function CourseCard({ brand }: { brand: BrandKey }) {
         {/* Rating */}
         <p
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
             fontSize: '11px',
             color: '#aaaaaa',

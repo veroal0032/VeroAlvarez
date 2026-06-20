@@ -34,7 +34,7 @@ export default async function CaseStudyPage({
   const { prev, next } = getAdjacentProjects(slug)
 
   return (
-    <main style={{ background: '#FAFAF7', minHeight: '100vh' }}>
+    <main style={{ background: '#ffffff', minHeight: '100vh' }}>
 
       {/* ── BACK LINK ── */}
       <div
@@ -193,7 +193,7 @@ export default async function CaseStudyPage({
                   fontFamily: 'var(--font-darker-grotesque)',
                   fontWeight: 700,
                   fontSize: '18px',
-                  color: '#333333',
+                  color: '#4D4D4D',
                   lineHeight: 1.2,
                 }}
               >
@@ -256,7 +256,7 @@ export default async function CaseStudyPage({
                 fontFamily: 'var(--font-darker-grotesque)',
                 fontWeight: 700,
                 fontSize: '22px',
-                color: '#333333',
+                color: '#4D4D4D',
                 lineHeight: 1.1,
               }}
             >
@@ -296,7 +296,7 @@ export default async function CaseStudyPage({
                 fontFamily: 'var(--font-darker-grotesque)',
                 fontWeight: 700,
                 fontSize: '22px',
-                color: '#333333',
+                color: '#4D4D4D',
                 lineHeight: 1.1,
                 textAlign: 'right',
               }}

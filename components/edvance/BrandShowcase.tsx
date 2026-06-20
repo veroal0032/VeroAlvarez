@@ -47,7 +47,7 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
         justifyContent: 'center',
       }}>
         <span style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '11px', color: tokens.primary, opacity: 0.5 }}>
-          Imagen del curso
+          Course image
         </span>
       </div>
 
@@ -55,7 +55,7 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
       <div style={{ padding: '14px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: tokens.primary, flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '11px', color: tokens.primary }}>Diseño UX</span>
+          <span style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '11px', color: tokens.primary }}>UX Design</span>
         </div>
 
         <p style={{
@@ -66,14 +66,14 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
           lineHeight: 1.2,
           margin: 0,
         }}>
-          Diseño de interfaces digitales
+          Digital interface design
         </p>
 
         <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '12px', color: '#888', margin: 0 }}>
-          Por Ana García
+          By Ana García
         </p>
         <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '11px', color: '#999', margin: 0 }}>
-          ★ 4.8 · Intermedio
+          ★ 4.8 · Intermediate
         </p>
 
         <motion.button
@@ -94,7 +94,7 @@ function CourseCard({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
             fontSize: '13px',
           }}
         >
-          Empezar curso
+          Start course
         </motion.button>
       </div>
     </motion.div>
@@ -122,7 +122,7 @@ function PrimaryButton({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandK
           fontSize: '14px',
         }}
       >
-        Empezar ahora
+        Start now
       </motion.button>
     </motion.div>
   )
@@ -168,10 +168,10 @@ function LogroBadge({ tokens, visible }: { tokens: typeof BRAND_TOKENS[BrandKey]
 
       <div style={{ overflow: 'hidden' }}>
         <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '13px', color: textColor, margin: 0, lineHeight: 1.2, whiteSpace: 'nowrap' }}>
-          ¡Curso completado!
+          Course completed!
         </p>
         <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 600, fontSize: '11px', color: subColor, margin: 0, marginTop: '1px' }}>
-          Diseño de interfaces digitales
+          Digital interface design
         </p>
       </div>
     </motion.div>
@@ -226,14 +226,14 @@ export default function BrandShowcase() {
           fontFamily: 'var(--font-darker-grotesque)',
           fontWeight: 800,
           fontSize: 'clamp(20px, 2.2vw, 26px)',
-          color: '#333333',
+          color: '#4D4D4D',
           marginBottom: '6px',
           lineHeight: 1.1,
         }}>
-          El mismo componente, 4 identidades
+          The same component, 4 identities
         </p>
-        <p style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '14px', color: '#888888' }}>
-          Selecciona una marca para ver los tokens aplicados
+        <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 400, fontSize: '14px', color: '#888888' }}>
+          Select a brand to see the tokens applied
         </p>
       </div>
 
@@ -261,7 +261,7 @@ export default function BrandShowcase() {
                 borderRadius: '999px',
                 border: 'none',
                 cursor: 'pointer',
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-dm-sans)',
                 fontWeight: 500,
                 fontSize: '13px',
               }}
@@ -304,12 +304,12 @@ export default function BrandShowcase() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.18 }}
-          style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: '12px', color: '#aaaaaa' }}
+          style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 400, fontSize: '12px', color: '#aaaaaa' }}
         >
-          {active === 'edvance' && 'Edvance · Portal central · Montserrat'}
-          {active === 'kira'    && 'Kira · Para profesionales · Plus Jakarta Sans'}
-          {active === 'blink'   && 'Blink · Para adolescentes · Nunito'}
-          {active === 'nubi'    && 'Nubi · Para niños · Fredoka One'}
+          {active === 'edvance' && 'Edvance · Main platform · Montserrat'}
+          {active === 'kira'    && 'Kira · For professionals · Plus Jakarta Sans'}
+          {active === 'blink'   && 'Blink · For teens · Nunito'}
+          {active === 'nubi'    && 'Nubi · For kids · Fredoka One'}
         </motion.p>
       </AnimatePresence>
     </div>

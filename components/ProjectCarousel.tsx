@@ -375,7 +375,7 @@ function MobileCarousel() {
               width: i === activeIndex ? '20px' : '6px',
               height: '6px',
               borderRadius: '999px',
-              background: i === activeIndex ? '#333333' : '#cccccc',
+              background: i === activeIndex ? '#4D4D4D' : '#cccccc',
               border: 'none',
               padding: 0,
               cursor: 'pointer',
@@ -521,7 +521,7 @@ export default function ProjectCarousel() {
             fontFamily: 'var(--font-darker-grotesque)',
             fontWeight: 800,
             fontSize: 'clamp(36px, 4vw, 42px)',
-            color: '#333333',
+            color: '#4D4D4D',
           }}
         >
           Proyectos

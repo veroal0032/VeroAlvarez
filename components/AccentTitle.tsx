@@ -22,7 +22,7 @@ export default function AccentTitle({
         fontSize: 'clamp(60px, 9vw, 100px)',
         lineHeight: 0.92,
         letterSpacing: '-0.02em',
-        color: '#333333',
+        color: '#4D4D4D',
       }}
       aria-label={title}
     >
@@ -30,7 +30,7 @@ export default function AccentTitle({
         <span
           key={i}
           style={{
-            color: i === accentLetterIndex ? accentColor : '#333333',
+            color: i === accentLetterIndex ? accentColor : '#4D4D4D',
             transition: 'color 0.3s ease',
           }}
         >

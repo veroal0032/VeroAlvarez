@@ -1,246 +1,106 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import MatchaSections from '@/components/matcha/MatchaSections'
-import BackButton from '@/components/BackButton'
+import { DM_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import Link from "next/link";
+import WorkSplitLayout from "@/components/WorkSplitLayout";
 
-export const metadata: Metadata = {
-  title: 'Matcha Chá — Verónica Alvarez',
-  description:
-    'Kiosco de autoservicio para una cafetería especializada en matcha. Diseño, desarrollo y branding en un solo proyecto.',
-}
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-sans",
+});
 
 export default function MatchaChaPage() {
   return (
-    <main style={{ background: '#FAFAF7', minHeight: '100vh' }}>
-      <BackButton />
-
-      {/* ── HERO ── */}
-      <section style={{ background: '#F0F7F0', padding: 'clamp(80px, 10vw, 120px) clamp(24px, 8vw, 80px) 0' }}>
-        <div
-          style={{
-            maxWidth: '1152px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'clamp(32px, 6vw, 80px)',
-            alignItems: 'center',
-          }}
-          className="hero-grid"
-        >
-          {/* Left */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', paddingBottom: 'clamp(48px, 8vw, 80px)' }}>
-            <h1
-              style={{
-                fontFamily: 'var(--font-darker-grotesque)',
-                fontWeight: 900,
-                fontSize: 'clamp(56px, 8vw, 96px)',
-                lineHeight: 0.92,
-                letterSpacing: '-0.02em',
-                color: '#333333',
-              }}
-            >
-              Matcha{' '}
-              <span style={{ color: '#155020' }}>chá</span>
-            </h1>
-
-            <span
-              style={{
-                display: 'inline-flex',
-                width: 'fit-content',
-                alignItems: 'center',
-                border: '1.5px solid #155020',
-                borderRadius: '999px',
-                padding: '5px 14px',
-                fontFamily: 'var(--font-inter)',
-                fontWeight: 500,
-                fontSize: '11px',
-                letterSpacing: '0.07em',
-                textTransform: 'uppercase',
-                color: '#155020',
-              }}
-            >
-              UX/UI · Vibe Coding · 2026
-            </span>
-
-            <p
-              style={{
-                fontFamily: 'var(--font-inter)',
-                fontWeight: 400,
-                fontSize: 'clamp(14px, 1.3vw, 16px)',
-                color: '#555555',
-                lineHeight: 1.65,
-                maxWidth: '400px',
-              }}
-            >
-              Kiosco de autoservicio para una cafetería especializada en matcha.
-              Diseño y desarrollo en un solo proyecto.
-            </p>
-
-            {/* Metadata row */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '12px 24px',
-                marginTop: '4px',
-              }}
-            >
-              {[
-                { label: 'Rol',          value: 'UX/UI · Vibe Coder' },
-                { label: 'Herramientas', value: 'Figma · Figma Make · Supabase · Claude · PostHog' },
-                { label: 'Año',          value: '2026' },
-                { label: 'Contexto',     value: 'Proyecto del curso "Creación de productos desde cero" — Coderhouse' },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p style={{
-                    fontFamily: 'var(--font-inter)',
-                    fontWeight: 400,
-                    fontSize: '11px',
-                    color: '#aaaaaa',
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    marginBottom: '3px',
-                  }}>
-                    {item.label}
-                  </p>
-                  <p style={{
-                    fontFamily: 'var(--font-darker-grotesque)',
-                    fontWeight: 700,
-                    fontSize: '15px',
-                    color: '#333333',
-                    lineHeight: 1.2,
-                  }}>
-                    {item.value}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — hero image */}
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-            <Image
-              src="/images/matcha/hero.png"
-              alt="Kiosco Matcha Chá"
-              width={600}
-              height={700}
-              priority
-              quality={100}
-              sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-              }}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── ACCORDION ── */}
-      <section
-        style={{
-          maxWidth: '1152px',
-          margin: '0 auto',
-          padding: 'clamp(40px, 6vw, 80px) clamp(24px, 8vw, 80px)',
-        }}
-      >
-        <MatchaSections />
-      </section>
-
-      {/* ── PROJECT NAVIGATION ── */}
+    <main
+      className={`${dmSans.variable} ${GeistSans.variable} work-page`}
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+        backgroundColor: "#ffffff",
+        display: "flex",
+        flexDirection: "column",
+        fontFamily: "var(--font-geist-sans), sans-serif",
+      }}
+    >
+      {/* Nav */}
       <nav
         style={{
-          maxWidth: '1152px',
-          margin: '0 auto',
-          padding: 'clamp(32px, 5vw, 56px) clamp(24px, 8vw, 80px)',
-          borderTop: '1px solid rgba(0,0,0,0.07)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
+          flexShrink: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 28px",
+          height: 52,
+          backgroundColor: "#ffffff",
+          borderBottom: "1px solid #E8E6DF",
         }}
       >
         <Link
-          href="/work/edvance"
-          style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '3px' }}
-          className="nav-link"
+          href="/explore"
+          style={{
+            fontFamily: "var(--font-geist-sans), sans-serif",
+            fontSize: 13,
+            fontWeight: 500,
+            color: "#4D4D4D",
+            textDecoration: "none",
+            letterSpacing: "0.01em",
+          }}
         >
-          <span style={{
-            fontFamily: 'var(--font-inter)',
-            fontWeight: 400,
-            fontSize: '11px',
-            color: '#aaaaaa',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-          }}>
-            ← Previous
-          </span>
-          <span className="nav-title" style={{
-            fontFamily: 'var(--font-darker-grotesque)',
-            fontWeight: 700,
-            fontSize: '22px',
-            color: '#333333',
-            lineHeight: 1.1,
-          }}>
-            Edvance
-          </span>
+          Verónica Alvarez
         </Link>
 
-        <Link
-          href="/work/petlink"
-          style={{
-            textDecoration: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '3px',
-            alignItems: 'flex-end',
-          }}
-          className="nav-link"
-        >
-          <span style={{
-            fontFamily: 'var(--font-inter)',
-            fontWeight: 400,
-            fontSize: '11px',
-            color: '#aaaaaa',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-          }}>
-            Next →
-          </span>
-          <span className="nav-title" style={{
-            fontFamily: 'var(--font-darker-grotesque)',
-            fontWeight: 700,
-            fontSize: '22px',
-            color: '#333333',
-            lineHeight: 1.1,
-            textAlign: 'right',
-          }}>
-            Petlink
-          </span>
-        </Link>
+        <div className="work-nav-links" style={{ display: "flex", gap: 28 }}>
+          {[
+            { label: "Resume", href: "/ALVAREZ_V.pdf", target: "_blank" },
+            { label: "Contact", href: "mailto:veroexplores94@gmail.com", target: "_blank" },
+          ].map(({ label, href, target }: { label: string; href: string; target?: string }) => (
+            <Link
+              key={label}
+              href={href}
+              target={target}
+              style={{
+                fontFamily: "var(--font-geist-sans), sans-serif",
+                fontSize: 11,
+                letterSpacing: "0.04em",
+                color: "#888",
+                textDecoration: "none",
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
       </nav>
 
-      {/* ── FOOTER MINI ── */}
-      <div style={{ textAlign: 'center', padding: '28px 24px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <Link href="/" style={{
-          fontFamily: 'var(--font-inter)',
-          fontWeight: 400,
-          fontSize: '12px',
-          color: '#aaaaaa',
-          textDecoration: 'none',
-        }}>
-          ← Volver al portfolio
-        </Link>
-      </div>
+      {/* Header */}
+      <header className="work-header" style={{
+        flexShrink: 0,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        padding: "48px 40px",
+        borderBottom: "1px solid #E8E6DF",
+      }}>
+        <div>
+          <h1 style={{
+            fontFamily: "var(--font-dm-sans), sans-serif",
+            fontWeight: 300,
+            fontSize: "clamp(28px, 4vw, 40px)",
+            color: "#333",
+            margin: 0,
+            lineHeight: 1.1,
+          }}>
+            UX/UI Design
+          </h1>
+        </div>
+      </header>
 
-      <style>{`
-        .nav-link:hover .nav-title { color: #155020; transition: color 0.2s ease; }
-        @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+      {/* Split layout */}
+      <div className="work-split-wrapper" style={{ flex: 1, overflow: "hidden" }}>
+        <WorkSplitLayout activeId="matcha" />
+      </div>
     </main>
-  )
+  );
 }
+

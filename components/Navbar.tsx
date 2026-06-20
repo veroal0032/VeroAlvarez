@@ -35,9 +35,9 @@ function NavButton({ label, href, onClick }: { label: string; href: string; onCl
         transition: 'background 0.2s ease, color 0.2s ease',
         // Estilos hover / estado
         background: isContact
-          ? hovered ? '#333333' : '#111111'
+          ? hovered ? '#4D4D4D' : '#111111'
           : hovered ? 'rgba(0,0,0,0.06)' : 'transparent',
-        color: isContact ? '#FAFAF7' : hovered ? '#111111' : '#333333',
+        color: isContact ? '#ffffff' : hovered ? '#111111' : '#4D4D4D',
         cursor: 'pointer',
       }}
     >
@@ -93,9 +93,9 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-5 h-[1.5px] bg-[#333] transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-[#333] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-[#333] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+          <span className={`block w-5 h-[1.5px] bg-[#4D4D4D] transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+          <span className={`block w-5 h-[1.5px] bg-[#4D4D4D] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-[1.5px] bg-[#4D4D4D] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
         </button>
 
         {/* CONTACT — derecha → abre ContactSheet */}
@@ -108,7 +108,7 @@ export default function Navbar() {
             letterSpacing: '0.04em',
             textTransform: 'uppercase',
             background: '#111111',
-            color: '#FAFAF7',
+            color: '#ffffff',
             padding: '8px 16px',
             borderRadius: '999px',
             border: 'none',
@@ -127,7 +127,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-[#FAFAF7] border-t border-[#e5e5e0] px-6 py-6 flex flex-col gap-5"
+            className="md:hidden absolute top-full left-0 right-0 bg-[#ffffff] border-t border-[#e5e5e0] px-6 py-6 flex flex-col gap-5"
           >
             {([
               { label: 'PROYECTOS', href: '#projects' },
@@ -146,7 +146,7 @@ export default function Navbar() {
                   fontSize: '13px',
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
-                  color: '#333333',
+                  color: '#4D4D4D',
                   textDecoration: 'none',
                 }}
               >
@@ -162,7 +162,7 @@ export default function Navbar() {
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 background: '#111111',
-                color: '#FAFAF7',
+                color: '#ffffff',
                 padding: '10px 20px',
                 borderRadius: '999px',
                 border: 'none',

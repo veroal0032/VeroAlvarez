@@ -33,7 +33,7 @@ const textStyle = {
 
 export default function AboutSection() {
   return (
-    <section id="about" style={{ background: '#FAFAF7' }}>
+    <section id="about" style={{ background: '#ffffff' }}>
 
       {/* ── DESKTOP ── */}
       <div className="hidden md:block">

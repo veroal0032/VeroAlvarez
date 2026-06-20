@@ -1,178 +1,124 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import EdvanceAccordion, { type AccordionSection } from '@/components/EdvanceAccordion'
 import SeasonShowcase from './SeasonShowcase'
 
-/* ─── Accordion ──────────────────────────────────────────── */
-interface Section {
-  id: string
-  num: string
-  title: string
-  content: React.ReactNode
+const ACCENT = '#1a6a8a'
+
+const T = {
+  body: {
+    fontFamily: 'var(--font-dm-sans)',
+    fontWeight: 400 as const,
+    fontSize: '15px',
+    color: '#666666',
+    lineHeight: 1.8,
+    margin: 0,
+  },
+  heading: (color = ACCENT) => ({
+    fontFamily: 'var(--font-darker-grotesque)',
+    fontWeight: 700 as const,
+    fontSize: '15px',
+    color,
+    lineHeight: 1.1,
+    marginBottom: '8px',
+  }),
+  hr: { border: 'none', borderTop: '1px solid rgba(0,0,0,0.1)', margin: 0 } as React.CSSProperties,
 }
 
-function AccordionItem({ section, isOpen, onToggle }: { section: Section; isOpen: boolean; onToggle: () => void }) {
-  return (
-    <div
-      id={section.id}
-      style={{
-        borderRadius: '16px',
-        overflow: 'hidden',
-        marginBottom: '6px',
-        background: isOpen ? '#ffffff' : '#f5f4f0',
-        transition: 'background 0.25s ease',
-        border: isOpen ? '1px solid rgba(0,0,0,0.07)' : '1px solid transparent',
-      }}
-    >
-      <button
-        onClick={onToggle}
-        style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '16px' }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <span style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, fontSize: '12px', color: '#1a6a8a', letterSpacing: '0.04em', minWidth: '24px' }}>
-            {section.num}
-          </span>
-          <span style={{ fontFamily: 'var(--font-darker-grotesque)', fontWeight: 700, fontSize: '22px', color: '#333333', lineHeight: 1 }}>
-            {section.title}
-          </span>
-        </div>
-        <motion.span
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0, color: '#999' }}
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </motion.span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ height: { type: 'spring', stiffness: 300, damping: 28 }, opacity: { duration: 0.2 } }}
-            style={{ overflow: 'hidden' }}
-          >
-            <motion.div
-              initial={{ y: 12, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 8, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-              style={{ padding: '4px 24px 28px' }}
-            >
-              {section.content}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
-
-/* ─── Helpers ────────────────────────────────────────────── */
-const DG = 'var(--font-darker-grotesque)'
-const IT = 'var(--font-inter)'
-
-function TextBlock({ title, text, accentColor = '#1a6a8a' }: { title: string; text: string; accentColor?: string }) {
-  return (
-    <div style={{ padding: '20px 0', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-      <p style={{ fontFamily: DG, fontWeight: 700, fontSize: '18px', color: accentColor, lineHeight: 1.1, margin: 0 }}>{title}</p>
-      <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '15px', color: '#666', lineHeight: 1.7, margin: 0 }}>{text}</p>
-    </div>
-  )
-}
-
-function HR() {
-  return <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.1)', margin: 0 }} />
-}
-
-/* ─── Sections ───────────────────────────────────────────── */
-
-/* 01 — Start Point */
+/* ── 01 — START POINT ─────────────────────────────────────── */
 const startPointContent = (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
-    {/* Quote — centrada */}
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{
         background: '#EBF8FF',
         borderRadius: '12px',
         padding: '20px 32px',
-        border: '1.5px solid #92DFFE',
+        border: `1.5px solid #92DFFE`,
         textAlign: 'center',
         maxWidth: '520px',
       }}>
-        <p style={{ fontFamily: DG, fontWeight: 700, fontSize: '22px', color: '#1a6a8a', lineHeight: 1.35, margin: 0 }}>
-          "Llegar a un país nuevo significa aprender todo de cero, incluso las estaciones."
+        <p style={{
+          fontFamily: 'var(--font-darker-grotesque)',
+          fontWeight: 700,
+          fontSize: '20px',
+          color: ACCENT,
+          lineHeight: 1.35,
+          margin: 0,
+        }}>
+          "Moving to a new country means learning everything from scratch — even the seasons."
         </p>
       </div>
     </div>
-    {/* Párrafo — izquierda */}
-    <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '15px', color: '#666', lineHeight: 1.7, margin: 0, textAlign: 'left' }}>
-      Ese fue el punto de partida de Cosechar. No un brief de cliente, no una tarea académica —
-      una necesidad real que surgió de vivir el desconcierto de las estaciones invertidas en Argentina.
+    <p style={T.body}>
+      That was the starting point for Cosechar. Not a client brief, not an academic assignment — a real need that came from living through the disorientation of reversed seasons in Argentina.
     </p>
   </div>
 )
 
-/* 02 — El problema */
+/* ── 02 — THE PROBLEM ─────────────────────────────────────── */
 const problemaContent = (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%' }}>
-    {/* Stat — centrada */}
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-        <span style={{ fontFamily: DG, fontWeight: 900, fontSize: '96px', lineHeight: 1, color: '#92DFFE', letterSpacing: '-0.03em' }}>
+        <span style={{
+          fontFamily: 'var(--font-darker-grotesque)',
+          fontWeight: 900,
+          fontSize: '96px',
+          lineHeight: 1,
+          color: '#92DFFE',
+          letterSpacing: '-0.03em',
+        }}>
           0
         </span>
-        <p style={{ fontFamily: DG, fontWeight: 700, fontSize: '20px', color: '#333', lineHeight: 1.2, margin: 0 }}>
-          apps locales resuelven esta problemática
+        <p style={{
+          fontFamily: 'var(--font-darker-grotesque)',
+          fontWeight: 700,
+          fontSize: '20px',
+          color: '#4D4D4D',
+          lineHeight: 1.2,
+          margin: 0,
+        }}>
+          local apps solve this problem
         </p>
-        <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '14px', color: '#888', lineHeight: 1.6, maxWidth: '400px', margin: 0 }}>
-          Al momento de construir Cosechar, ninguna aplicación argentina usaba datos oficiales
-          para informar estacionalidad de manera simple.
+        <p style={{ ...T.body, textAlign: 'center', maxWidth: '400px' }}>
+          At the time Cosechar was built, no Argentine app used official data to communicate seasonality in a simple way.
         </p>
       </div>
     </div>
-    {/* Párrafo — izquierda */}
-    <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '15px', color: '#666', lineHeight: 1.7, margin: 0, textAlign: 'left' }}>
-      En Argentina el verano es en diciembre y el invierno en julio. Para visitantes e inmigrantes,
-      entender qué está en temporada — y por qué importa — no es obvio. Comprar fuera de temporada
-      significa pagar más por productos con menos sabor, sin saber que existe una alternativa más
-      fresca y económica.
+    <p style={T.body}>
+      In Argentina, summer is in December and winter is in July. For visitors and immigrants, understanding what's in season — and why it matters — isn't obvious. Buying out of season means paying more for produce with less flavor, without knowing a fresher, cheaper alternative exists.
     </p>
   </div>
 )
 
-/* 03 — Decisiones de diseño */
+/* ── 03 — DESIGN DECISIONS ────────────────────────────────── */
 const DECISION_BLOCKS = [
   {
-    title: 'Datos oficiales, nada inventado',
-    text: 'Toda la información de estacionalidad viene del Ministerio de Economía de Argentina. Eso le da credibilidad real a la app — y significa que el contenido no necesita actualizarse manualmente.',
+    title: 'Official data, nothing made up',
+    body: 'All seasonality information comes from the Argentine Ministry of Economy. That gives the app real credibility — and means the content doesn\'t need to be updated manually.',
   },
   {
-    title: 'Detalle por producto',
-    text: 'Cada ítem tiene calorías, vitaminas, minerales y una descripción con contexto local argentino. No es solo un listado — es información útil para tomar decisiones.',
+    title: 'Detail per product',
+    body: 'Each item includes calories, vitamins, minerals and a description with local Argentine context. It\'s not just a list — it\'s useful information for making decisions.',
   },
   {
-    title: 'UI estacional',
-    text: 'El color de la app cambia según la estación activa. El diseño comunica sin texto adicional — al abrir la app ya sabés en qué época del año estás.',
+    title: 'Seasonal UI',
+    body: 'The app\'s color palette changes with the active season. The design communicates without extra text — opening the app immediately tells you what time of year it is.',
   },
 ]
 
 const decisionesContent = (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
     <div style={{ display: 'flex', flexDirection: 'column', maxWidth: '672px' }}>
-      <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '15px', color: '#666', lineHeight: 1.7, margin: '0 0 24px' }}>
-        Tres decisiones definieron el producto:
-      </p>
+      <p style={{ ...T.body, marginBottom: '24px' }}>Three decisions defined the product:</p>
       {DECISION_BLOCKS.map((block, i) => (
         <div key={block.title}>
-          <TextBlock title={block.title} text={block.text} />
-          {i < DECISION_BLOCKS.length - 1 && <HR />}
+          <div style={{ padding: '20px 0', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <p style={T.heading()}>{block.title}</p>
+            <p style={T.body}>{block.body}</p>
+          </div>
+          {i < DECISION_BLOCKS.length - 1 && <hr style={T.hr} />}
         </div>
       ))}
     </div>
@@ -180,96 +126,92 @@ const decisionesContent = (
   </div>
 )
 
-/* 04 — Proceso técnico */
+/* ── 04 — TECH PROCESS ────────────────────────────────────── */
 const PROCESS_STEPS = [
-  { num: '01', title: 'Investigación',    desc: 'Identificación del problema, fuentes oficiales y definición del usuario objetivo. Datos del Ministerio de Economía de Argentina.' },
-  { num: '02', title: 'Identidad visual', desc: 'Paleta estacional, tipografía y sistema de colores por temporada. Cada estación tiene su propio lenguaje visual.' },
-  { num: '03', title: 'Wireframes',       desc: 'Flujo de navegación, estructura de contenido y jerarquía de pantallas en Figma antes de escribir una línea de código.' },
-  { num: '04', title: 'Build y deploy',   desc: 'Desarrollo en React con vibe coding, deploy en Vercel. De Figma al navegador en tiempo récord.' },
+  { num: '01', title: 'Research',        desc: 'Problem identification, official sources and target user definition. Data from the Argentine Ministry of Economy.' },
+  { num: '02', title: 'Visual identity', desc: 'Seasonal palette, typography and color system per season. Each season has its own visual language.' },
+  { num: '03', title: 'Wireframes',      desc: 'Navigation flow, content structure and screen hierarchy in Figma before writing a single line of code.' },
+  { num: '04', title: 'Build & deploy',  desc: 'Development in React with vibe coding, deployed on Vercel. From Figma to the browser at record speed.' },
 ]
 
 const procesoContent = (
-  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', maxWidth: '672px' }} className="proceso-grid">
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', maxWidth: '672px' }}>
     {PROCESS_STEPS.map((step) => (
       <div key={step.num} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <span style={{ fontFamily: DG, fontWeight: 900, fontSize: '48px', lineHeight: 1, color: '#92DFFE', letterSpacing: '-0.02em' }}>
+        <span style={{
+          fontFamily: 'var(--font-darker-grotesque)',
+          fontWeight: 900,
+          fontSize: '48px',
+          lineHeight: 1,
+          color: '#92DFFE',
+          letterSpacing: '-0.02em',
+        }}>
           {step.num}
         </span>
-        <p style={{ fontFamily: DG, fontWeight: 700, fontSize: '16px', color: '#1a6a8a', margin: 0, lineHeight: 1.2 }}>
-          {step.title}
-        </p>
-        <p style={{ fontFamily: IT, fontWeight: 400, fontSize: '14px', color: '#666', lineHeight: 1.7, margin: 0 }}>
-          {step.desc}
-        </p>
+        <p style={T.heading()}>{step.title}</p>
+        <p style={T.body}>{step.desc}</p>
       </div>
     ))}
   </div>
 )
 
-/* 05 — Resultado final */
-function ResultadoContent() {
-  const [hover, setHover] = useState(false)
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', alignItems: 'center' }}>
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ type: 'spring', stiffness: 280, damping: 24 }}
-        style={{ maxWidth: '480px', width: '100%' }}
-      >
-        <Image
-          src="/images/cosechar/resultado.png"
-          alt="Cosechar — resultado final"
-          width={2860}
-          height={2048}
-          quality={100}
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </motion.div>
-      <motion.a
+/* ── 05 — FINAL RESULT ────────────────────────────────────── */
+const resultadoContent = (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+    <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', background: '#EBF8FF', maxWidth: '480px', margin: '0 auto' }}>
+      <Image
+        src="/images/cosechar/resultado.png"
+        alt="Cosechar — final result"
+        width={2860}
+        height={2048}
+        quality={100}
+        sizes="50vw"
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+      />
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <a
         href="https://cosechar.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        animate={{
-          y: hover ? -2 : 0,
-          boxShadow: hover ? '0 8px 20px rgba(61,122,78,0.3)' : '0 0px 0px rgba(61,122,78,0)',
-          filter: hover ? 'brightness(110%)' : 'brightness(100%)',
-        }}
-        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
         style={{
+          display: 'inline-block',
           background: '#3D7A4E',
           color: '#ffffff',
           borderRadius: '100px',
           padding: '14px 32px',
-          fontFamily: DG,
+          fontFamily: 'var(--font-darker-grotesque)',
           fontWeight: 700,
           fontSize: '15px',
           textDecoration: 'none',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
+          transition: 'filter 0.2s ease, transform 0.2s ease',
+        }}
+        onMouseEnter={(e) => {
+          const el = e.currentTarget as HTMLAnchorElement
+          el.style.filter = 'brightness(110%)'
+          el.style.transform = 'translateY(-2px)'
+        }}
+        onMouseLeave={(e) => {
+          const el = e.currentTarget as HTMLAnchorElement
+          el.style.filter = 'brightness(100%)'
+          el.style.transform = 'translateY(0)'
         }}
       >
-        Frutas y vegetales de temporada →
-      </motion.a>
+        Fruits & vegetables in season →
+      </a>
     </div>
-  )
-}
-const resultadoContent = <ResultadoContent />
+  </div>
+)
 
-/* 06 — Aprendizajes */
+/* ── 06 — LEARNINGS ───────────────────────────────────────── */
 const LEARNINGS = [
   {
-    title: 'Diseñar para mobile aunque el contexto sea desktop',
-    text: 'Aunque la app vive en desktop, está en versión responsive para teléfono. La verdad es que el usuario buscaría la información pocas veces desde su casa — la mayoría del tiempo desde un celular, en el mercado o en el supermercado.',
+    title: 'Design for mobile even when the context is desktop',
+    body: 'Although the app lives on desktop, it\'s fully responsive for mobile. The reality is that users would look up this information on their phone — at the market or the supermarket, not at home.',
   },
   {
-    title: 'La fuente veraz hace que el producto se sostenga solo',
-    text: 'Usar datos oficiales significa que la página vive sin grandes modificaciones. No hay que actualizar el contenido manualmente — la información es confiable y estable.',
+    title: 'A trustworthy source makes the product sustain itself',
+    body: 'Using official data means the site lives without major updates. No need to manually refresh content — the information is reliable and stable.',
   },
 ]
 
@@ -277,38 +219,32 @@ const aprendizajesContent = (
   <div style={{ display: 'flex', flexDirection: 'column', maxWidth: '672px' }}>
     {LEARNINGS.map((item, i) => (
       <div key={item.title}>
-        <TextBlock title={item.title} text={item.text} />
-        {i < LEARNINGS.length - 1 && <HR />}
+        <div style={{ padding: '20px 0', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <p style={T.heading()}>{item.title}</p>
+          <p style={T.body}>{item.body}</p>
+        </div>
+        {i < LEARNINGS.length - 1 && <hr style={T.hr} />}
       </div>
     ))}
   </div>
 )
 
-/* ─── Sections array + export ────────────────────────────── */
-const SECTIONS: Section[] = [
-  { id: 'start-point',  num: '01', title: 'Start Point',          content: startPointContent },
-  { id: 'problema',     num: '02', title: 'El problema',          content: problemaContent },
-  { id: 'decisiones',   num: '03', title: 'Decisiones de diseño', content: decisionesContent },
-  { id: 'proceso',      num: '04', title: 'Proceso técnico',      content: procesoContent },
-  { id: 'resultado',    num: '05', title: 'Resultado final',      content: resultadoContent },
-  { id: 'aprendizajes', num: '06', title: 'Aprendizajes',         content: aprendizajesContent },
+/* ── ACCORDION DATA ───────────────────────────────────────── */
+const SECTIONS: AccordionSection[] = [
+  { id: 'start-point',  num: '01', title: 'Start Point',      content: startPointContent },
+  { id: 'problema',     num: '02', title: 'The Problem',       content: problemaContent },
+  { id: 'decisiones',   num: '03', title: 'Design Decisions',  content: decisionesContent },
+  { id: 'proceso',      num: '04', title: 'Tech Process',      content: procesoContent },
+  { id: 'resultado',    num: '05', title: 'Final Result',      content: resultadoContent },
+  { id: 'aprendizajes', num: '06', title: 'Learnings',         content: aprendizajesContent },
 ]
 
 export default function CosecharSections() {
-  const [openSections, setOpenSections] = useState<string[]>(['start-point'])
-  const toggle = (id: string) =>
-    setOpenSections((prev) => prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id])
-
   return (
-    <div>
-      {SECTIONS.map((section) => (
-        <AccordionItem
-          key={section.id}
-          section={section}
-          isOpen={openSections.includes(section.id)}
-          onToggle={() => toggle(section.id)}
-        />
-      ))}
-    </div>
+    <EdvanceAccordion
+      sections={SECTIONS}
+      accentColor={ACCENT}
+      defaultOpen="start-point"
+    />
   )
 }
