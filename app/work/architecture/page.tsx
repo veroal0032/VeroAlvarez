@@ -508,7 +508,7 @@ export default function ArchitecturePage() {
           Verónica Alvarez
         </Link>
         <div style={{ display: "flex", gap: 28 }}>
-          <Link href="/ALVAREZ%20VER%C3%B3NICA%20%20EN-AR.pdf" target="_blank" style={{
+          <Link href="/ALVAREZ_ARCH.pdf" target="_blank" style={{
             fontFamily: "var(--font-geist-sans), sans-serif",
             fontSize: 11,
             letterSpacing: "0.04em",
