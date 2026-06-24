@@ -413,7 +413,7 @@ export default function WorkSplitLayout({ activeId }: { activeId: ProjectId }) {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: `linear-gradient(to bottom, transparent ${cfg.heroFadeStart ?? 86}%, #ffffff 100%)`,
+                background: `linear-gradient(to bottom, transparent ${cfg.heroFadeStart ?? 86}%, #f7f7f7 100%)`,
                 pointerEvents: "none",
               }}
             />
