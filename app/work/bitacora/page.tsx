@@ -18,7 +18,7 @@ export default function BitacoraPage() {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#f7f7f7",
         display: "flex",
         flexDirection: "column",
         fontFamily: "var(--font-geist-sans), sans-serif",
@@ -32,7 +32,7 @@ export default function BitacoraPage() {
           justifyContent: "space-between",
           padding: "0 28px",
           height: 52,
-          backgroundColor: "#ffffff",
+          backgroundColor: "#f7f7f7",
           borderBottom: "1px solid #E8E6DF",
         }}
       >

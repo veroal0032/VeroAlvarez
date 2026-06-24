@@ -204,7 +204,7 @@ export default function ArtPage() {
       style={{
         width: "100vw",
         minHeight: "100vh",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#f7f7f7",
         fontFamily: "var(--font-dm-sans), sans-serif",
       }}
     >
@@ -216,7 +216,7 @@ export default function ArtPage() {
           justifyContent: "space-between",
           padding: "0 28px",
           height: 52,
-          backgroundColor: "#ffffff",
+          backgroundColor: "#f7f7f7",
           borderBottom: "1px solid #E8E6DF",
         }}
       >

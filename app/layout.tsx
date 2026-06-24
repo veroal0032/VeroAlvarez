@@ -81,7 +81,7 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${inter.variable} ${caveat.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${nunito.variable} ${fredoka.variable} ${poppins.variable}`}
     >
-      <body className="bg-[#ffffff] text-[#4D4D4D] font-inter antialiased">
+      <body className="bg-[#f7f7f7] text-[#4D4D4D] font-inter antialiased">
         {children}
       </body>
     </html>

@@ -13,7 +13,7 @@ export default function Home() {
       className={`${GeistSans.className} home-main`}
       style={{
         width: "100vw",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#f7f7f7",
         display: "flex",
         flexDirection: "column",
       }}
@@ -45,7 +45,7 @@ export default function Home() {
           justifyContent: "space-between",
           padding: "22px 32px",
           borderBottom: "0.5px solid #D3D1C7",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#f7f7f7",
         }}
       >
         <span

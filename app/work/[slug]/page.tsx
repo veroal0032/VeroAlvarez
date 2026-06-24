@@ -34,7 +34,7 @@ export default async function CaseStudyPage({
   const { prev, next } = getAdjacentProjects(slug)
 
   return (
-    <main style={{ background: '#ffffff', minHeight: '100vh' }}>
+    <main style={{ background: '#f7f7f7', minHeight: '100vh' }}>
 
       {/* ── BACK LINK ── */}
       <div
@@ -146,7 +146,7 @@ export default async function CaseStudyPage({
       {/* ── OVERVIEW ROW ── */}
       <section
         style={{
-          background: '#ffffff',
+          background: '#f7f7f7',
           borderBottom: '1px solid rgba(0,0,0,0.06)',
         }}
       >

@@ -59,10 +59,10 @@ export default function PhotographyPage() {
   return (
     <main
       className={`${dmSans.variable} ${GeistSans.variable}`}
-      style={{ width: "100vw", minHeight: "100vh", backgroundColor: "#ffffff", fontFamily: "var(--font-dm-sans), sans-serif" }}
+      style={{ width: "100vw", minHeight: "100vh", backgroundColor: "#f7f7f7", fontFamily: "var(--font-dm-sans), sans-serif" }}
     >
       {/* Nav */}
-      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", height: 52, backgroundColor: "#ffffff", borderBottom: "1px solid #E8E6DF" }}>
+      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", height: 52, backgroundColor: "#f7f7f7", borderBottom: "1px solid #E8E6DF" }}>
         <Link href="/" style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 13, fontWeight: 500, color: "#4D4D4D", textDecoration: "none", letterSpacing: "0.01em" }}>
           Verónica Alvarez
         </Link>

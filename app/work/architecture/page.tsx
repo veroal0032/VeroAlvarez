@@ -486,7 +486,7 @@ export default function ArchitecturePage() {
   };
 
   return (
-    <div className={`${dmSans.variable} ${GeistSans.variable}`} style={{ background: "#ffffff", minHeight: "100vh", color: "#333333" }}>
+    <div className={`${dmSans.variable} ${GeistSans.variable}`} style={{ background: "#f7f7f7", minHeight: "100vh", color: "#333333" }}>
       {/* Nav */}
       <nav style={{
         display: "flex",
@@ -494,7 +494,7 @@ export default function ArchitecturePage() {
         justifyContent: "space-between",
         padding: "0 28px",
         height: 52,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#f7f7f7",
         borderBottom: "1px solid #E8E6DF",
       }}>
         <Link href="/" style={{
