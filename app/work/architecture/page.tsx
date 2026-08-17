@@ -162,6 +162,7 @@ const projects: Project[] = [
       { src: "/arch/parley/bathroom.jpg", tag: "Bathroom" },
       { src: "/arch/parley/outside-zone.jpg", tag: "Outside zone" },
     ],
+  },
   {
     id: "05",
     title: "Quintas B11 — Planimetría Completa",
