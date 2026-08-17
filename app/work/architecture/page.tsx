@@ -481,7 +481,7 @@ function Lightbox({
           padding: "4px 8px",
         }}
       >
-        âœ•
+        ✕
       </button>
 
       {/* Prev */}
